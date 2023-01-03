@@ -38,7 +38,8 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        (new JsonUtility)->addNewProduct('products.json', $request->type, $request->title, $request->firstname, $request->surname, $request->price, $request->length);
+        return redirect('/');
     }
 
     /**
@@ -50,7 +51,8 @@ class ProductsController extends Controller
     public function show($id)
     {
         return (view('product', [
-            'data' => (new JsonUtility)->getProductWithId("products.json", $id)[0]
+            'data' => (new JsonUtility)->getProductWithId("../public/products.json", $id)[0],
+
         ]));
     }
 
@@ -62,7 +64,6 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
     }
 
     /**
@@ -74,7 +75,8 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        (new JsonUtility)->updateProductWithId('products.json', $request->id, $request->title, $request->firstname, $request->surname, $request->price, $request->numpages);
+        return redirect('/');
     }
 
     /**
@@ -85,6 +87,6 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        (new JsonUtility)->deleteProductWithId('products.json', $id);
     }
 }

@@ -15,3 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ProductsController::class, 'index']);
+
+Route::get('/product/{id}', [ProductsController::class, 'show'])->where(['id' => '[0-9]{1,5}']);
+
+Route::post('/store-form', [ProductsController::class, 'store']);
+
+Route::patch('/product/{id}', [ProductsController::class, 'update']);
+
+Route::delete('/product/{id}', [ProductsController::class, 'destroy']);
