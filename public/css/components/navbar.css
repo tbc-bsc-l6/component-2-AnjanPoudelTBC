@@ -1,0 +1,33 @@
+.navbar{
+    color: white;
+   background-color: gray;
+}
+
+.navbar-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.navbar-middle{
+    
+}
+.navbar-middle-search{
+
+}
+.navbar-middle-search-logo{
+
+}
+
+.navbar-left{
+
+}
+
+.navbar-left-logo{
+width:200px;
+}
+
+.navbar-left-logo img{
+    width:100%
+}
