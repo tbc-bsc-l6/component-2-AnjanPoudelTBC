@@ -1,6 +1,18 @@
-
+@import url('./variables.css');
 @import url('./components/navbar.css');
+@import url('./components/card.css');
+@import url('./components/buttons.css');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 body{
-    background-color: red;
+    background-color: white;
+    font-family: sans-serif;
+}
+
+.container{
+    width: var(--main-width);
 }
