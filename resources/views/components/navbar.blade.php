@@ -3,7 +3,7 @@
         <div class="navbar-left">
 
             <div class="navbar-left-logo">
-                <img src= "/assets/logo.png"/>
+               <a href="{{route("home")}}"> <img src= "/assets/logo.png"/></a>
             </div>
         </div>
         <div class="navbar-middle">

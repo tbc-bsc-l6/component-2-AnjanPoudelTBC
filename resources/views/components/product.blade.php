@@ -12,8 +12,8 @@
         <div class="product-card-price">
             Rs. 100
         </div>
-        <div class="btn btn-primary btn-full product-card-btn">
+        <button class="btn btn-primary btn-full product-card-btn">
             Add to cart
-        </div>
+        </button>
     </div>
 </div>

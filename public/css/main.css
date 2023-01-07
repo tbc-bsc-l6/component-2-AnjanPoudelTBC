@@ -1,0 +1,11 @@
+/* Import variables */
+@import url('./variables.css');
+
+/* Import components */
+@import url('./components/navbar.css');
+@import url('./components/card.css');
+@import url('./components/buttons.css');
+@import url('./components/form.css');
+
+/* Import Base */
+@import url('./base.css');

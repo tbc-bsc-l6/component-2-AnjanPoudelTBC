@@ -1,0 +1,57 @@
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-size: var(--font-size-sm);
+   }
+   
+   :-ms-input-placeholder { /* Internet Explorer 10-11 */
+     font-size: var(--font-size-sm);
+   }
+   
+   ::-ms-input-placeholder { /* Microsoft Edge */
+     font-size: var(--font-size-sm);
+   }
+
+.my-form{
+    width: 60%;
+    margin: auto;
+    padding: 1.5rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--secondary-color);
+}
+
+.my-create-form-buttons{
+    margin-top: 1rem;
+   display: flex;
+   gap: 1rem;
+}
+
+.product-form-units{
+    display: flex;
+    gap: 1rem;
+}
+
+.product-form-units >div{
+    flex:1;
+}
+
+.form-product-image{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    cursor: pointer;
+    padding: 1rem;
+    border: 3px solid var(--secondary-color);
+    border-style: dashed;
+    border-radius: 6px;
+    justify-content: center;
+    color: var(--secondary-color);
+}
+
+
+.my-form-select{
+    width: 100%;
+    
+ font-size: var(--font-size-sm);
+}
+
+option:first-child{
+}

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.home');
-});
+})->name('home');
+
+// Routes for product
+
+// Route::resource('product', ProductController::class);
+
+Route::get('/products', [ProductController::class, 'index'])->name('allProducts');
+Route::get('/products/add', [ProductController::class, 'create']);
+Route::post('/products/add', [ProductController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

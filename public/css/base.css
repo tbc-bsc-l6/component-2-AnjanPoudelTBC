@@ -1,7 +1,4 @@
-@import url('./variables.css');
-@import url('./components/navbar.css');
-@import url('./components/card.css');
-@import url('./components/buttons.css');
+
 *{
     padding: 0;
     margin: 0;
@@ -15,4 +12,5 @@ body{
 
 .container{
     width: var(--main-width);
+    margin: auto;
 }
