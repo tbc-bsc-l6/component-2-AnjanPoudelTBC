@@ -8,9 +8,9 @@ const uploadImage = (event) => {
         let imageholder = document.getElementsByClassName(
             "form-product-image-icon"
         )[0];
-        let imageInput = document.getElementById("product-image-path");
+        // let imageInput = document.getElementById("product_image");
 
-        imageInput.setAttribute("value", reader.result);
+        // imageInput.setAttribute("value", reader.result);
 
         imageholder.setAttribute("src", reader.result);
 

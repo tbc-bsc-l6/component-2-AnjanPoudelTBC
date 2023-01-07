@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 
-    <form class="my-form my-create-form" method="POST" action="{{ url('products/add') }}">
+    <form class="my-form my-create-form" method="POST" enctype="multipart/form-data" action="{{ url('products/add') }}">
         @csrf
 
         <div class=" mb-6 text-xl font-semibold">
@@ -14,7 +14,7 @@
 
         <div class="mt-6">
 
-            <label for="product_image">
+            <label for="product-image-path">
                 <div class="form-product-image">
                     <div>
                         <img class="form-product-image-icon" src="/assets/upload.svg" alt="product image" />
@@ -25,9 +25,9 @@
 
                 </div>
             </label>
-            <input type="file" hidden id="product_image" name="product_image" accept="image/png, image/jpeg"
+            <input type="file" hidden id="product-image-path" name="product_image_path" accept="image/png, image/jpeg"
                 onchange=" uploadImage(event)">
-            <input type="text" hidden id="product-image-path" name="product_image_path">
+
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 

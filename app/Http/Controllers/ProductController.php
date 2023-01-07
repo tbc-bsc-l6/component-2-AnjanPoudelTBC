@@ -14,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('product.products');
+        $products = Product::all();
+        return view('product.products', ['products' => $products]);
     }
 
     /**
@@ -45,15 +46,25 @@ class ProductController extends Controller
             'quantity_in_stock' => 'required'
 
         ]);
+
         $product = new Product;
-        $product->image_path = $request->product_image_path;
+
+        if ($request->file('product_image_path')) {
+            $file = $request->file('product_image_path');
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('/UploadedImages'), $filename);
+            $product->image_path = $filename;
+        }
         $product->product_name = $request->product_name;
         $product->description = $request->product_description;
         $product->category = $request->category;
         $product->unit = $request->unit;
         $product->quantity = $request->quantity;
         $product->quantity_in_stock = $request->quantity_in_stock;
+
         $product->save();
+
+        return redirect()->route('home');
     }
 
     /**
