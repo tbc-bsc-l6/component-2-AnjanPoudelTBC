@@ -1,6 +1,6 @@
 @extends('layouts.masterlayout')
-
 @section('content')
+
 <div class="container">
 
     <form class="my-form my-create-form" method="POST" enctype="multipart/form-data" action="{{ url('products/add') }}">
@@ -15,9 +15,11 @@
         <div class="mt-6">
 
             <label for="product-image-path">
-                <div class="form-product-image">
+                <div class="form-product-image {{count($errors->get('product_image_path'))>0?" error-input":""}}">
                     <div>
-                        <img class="form-product-image-icon" src="/assets/upload.svg" alt="product image" />
+                        <img class="form-product-image-icon"
+                            src="{!!strlen(old('product-image-path'))>0 ?old('product_image_path'):'/assets/upload.svg'!!}"
+                            alt="product image" />
                     </div>
                     <div class=" form-product-image-text">
                         Upload Your Image Here
@@ -26,17 +28,17 @@
                 </div>
             </label>
             <input type="file" hidden id="product-image-path" name="product_image_path" accept="image/png, image/jpeg"
-                onchange=" uploadImage(event)">
+                value="{{old('product-image-path')}}" onchange=" uploadImage(event)">
 
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            <x-input-error :messages="$errors->get('product_image_path')" class="mt-2" />
         </div>
 
         <!-- Product name -->
         <div class="mt-6">
             <x-input-label for="product_name" :value="__('Product Name')" />
-            <x-text-input placeholder="Enter the product name" id="product_name" type="text" name="product_name"
-                required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            <x-text-input placeholder="Enter the product name" id="product_name" type="text" name='product_name'
+                value="{{old('product_name')}}" required autofocus />
+            <x-input-error :messages="$errors->get('product_name')" class="mt-2" />
         </div>
 
         <!-- Product Category -->
@@ -44,14 +46,14 @@
 
             <x-input-label for="category" :value="__('Product Category')" />
             <select name="category" id="category"
-                class=" my-form-select border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full">
+                class=" my-form-select border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full {{count($errors->get('category'))>0? 'error-input' :''}}">
                 <option value="">---- Choose the product category ----</option>
-                <option value="vegetable">Vegetables</option>
-                <option value="fruit">Fruit</option>
-                <option value="meat">Meat</option>
-                <option value="drink">Drinks</option>
+                <option value="vegetable" {{ old('category')=="vegetable" ? 'selected' : '' }}>Vegetables</option>
+                <option value="fruit" {{ old('category')=="fruit" ? 'selected' : '' }}>Fruit</option>
+                <option value="meat" {{ old('category')=="meat" ? 'selected' : '' }}>Meat</option>
+                <option value="drink" {{ old('category')=="drink" ? 'selected' : '' }}>Drinks</option>
             </select>
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            <x-input-error :messages="$errors->get('category')" class="mt-2" />
         </div>
 
         <!-- Product Description -->
@@ -59,9 +61,9 @@
 
             <x-input-label for="product_description" :value="__('Product Description')" />
             <textarea rows="4" name="product_description" id="product_description"
-                class=" my-form-select border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full"
-                placeholder="Provide some description of the product... (Max : 255)"></textarea>
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                class=" my-form-select border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full {{count($errors->get('product_description'))>0?'error-input':''}}"
+                placeholder="Provide some description of the product... (Max : 255)">{{ old('product_description') }}</textarea>
+            <x-input-error :messages="$errors->get('product_description')" class="mt-2" />
         </div>
 
 
@@ -74,36 +76,50 @@
             <div class="mt-6">
                 <x-input-label for="quantity" :value="__('Quantity')" />
                 <x-text-input placeholder="Enter the product quantity" id="quantity" type="number" name="quantity"
-                    required />
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                    value="{{old('quantity')}}" required />
+                <x-input-error :messages="$errors->get('quantity')" class="mt-2" />
             </div>
             <div class="mt-6">
 
                 <x-input-label for="unit" :value="__('Unit of measurement')" />
                 <select id="unit" name="unit"
-                    class=" my-form-select border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full">
+                    class=" my-form-select border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full {{count($errors->get('unit'))>0?'error-input':''}}">
                     <option value="">---- Choose unit of measurement ----</option>
-                    <option value="gms">Grams (gms)</option>
-                    <option value="kg">Kilogram (kg)</option>
-                    <option value="pcs">Pieces (pcs)</option>
-                    <option value="dzn">Dozen (dzn)</option>
-                    <option value="ltr">Litre (ltr)</option>
+                    <option value="gms" {{ old('unit')=="gms" ? 'selected' : '' }}>Grams (gms)</option>
+                    <option value="kg" {{ old('unit')=="kg" ? 'selected' : '' }}>Kilogram (kg)</option>
+                    <option value="pcs" {{ old('unit')=="pcs" ? 'selected' : '' }}>Pieces (pcs)</option>
+                    <option value="dzn" {{ old('unit')=="dzn" ? 'selected' : '' }}>Dozen (dzn)</option>
+                    <option value="ltr" {{ old('unit')=="ltr" ? 'selected' : '' }}>Litre (ltr)</option>
                 </select>
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                <x-input-error :messages="$errors->get('unit')" class="mt-2" />
             </div>
 
 
         </div>
 
 
+        <div class="product-form-units">
+            <!-- Product quantity -->
+            <div class="mt-6">
+                <x-input-label for="quantity_in_stock" :value="__('Quantity In Stock')" />
+                <x-text-input placeholder="Enter the product quantity in stock" id="quantity_in_stock" type="number"
+                    name="quantity_in_stock" required value="{{ old('quantity_in_stock') }}" />
+                <x-input-error :messages="$errors->get('quantity_in_stock')" class="mt-2" />
+            </div>
+            <div class="mt-6">
 
-        <!-- Product quantity -->
-        <div class="mt-6">
-            <x-input-label for="quantity_in_stock" :value="__('Quantity In Stock')" />
-            <x-text-input placeholder="Enter the product quantity in stock" id="quantity_in_stock" type="number"
-                name="quantity_in_stock" required />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                <x-input-label for="price" :value="__('Price ($)')" />
+
+                <x-text-input placeholder="Enter the price" id="price" type="number" step="0.01" name="price" value="{{
+                    old('price') }}" required />
+                <x-input-error :messages=" $errors->get('price')" class="mt-2" />
+
+            </div>
+
+
         </div>
+
+
 
 
 

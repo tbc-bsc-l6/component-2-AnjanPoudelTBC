@@ -16,6 +16,7 @@
                 <th>Quantity</th>
                 <th>Unit</th>
                 <th>Stock</th>
+                <th>Price</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -32,12 +33,21 @@
                 <td>{{$product->quantity}}</td>
                 <td>{{$product->unit}}</td>
                 <td>{{$product->quantity_in_stock}}</td>
+                <td>{{$product->price}}</td>
                 <td class="action-row">
                     <div class="action-icon">
                         <img src="/assets/editicon.png" />
                     </div>
                     <div class="action-icon">
-                        <img src="/assets/deleteicon.png" />
+                        <form method="POST" action='/products/{{$product->id}}'>
+                            @csrf
+                            @method('DELETE')
+                            <label for="delete-btn">
+                                <img src="/assets/deleteicon.png" />
+                            </label>
+                            <button type="submit" type="hidden" id="delete-btn"></button>
+                        </form>
+
                     </div>
                 </td>
             </tr>

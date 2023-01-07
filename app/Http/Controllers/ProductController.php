@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -36,16 +37,25 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+
+
+        $validatedData = Validator::make($request->all(), [
             'product_image_path' => 'required',
-            'product_name' => 'required',
+            'product_name' => 'required|max:25',
             'category' => 'required',
-            'product_description' => 'max:255',
+            'product_description' => 'max:25',
             'quantity' => 'required',
             'unit' => 'required',
+            'price' => 'required',
             'quantity_in_stock' => 'required'
 
         ]);
+
+        if ($validatedData->fails()) {
+            return redirect('products/add')
+                ->withErrors($validatedData)
+                ->withInput();
+        }
 
         $product = new Product;
 
@@ -59,12 +69,13 @@ class ProductController extends Controller
         $product->description = $request->product_description;
         $product->category = $request->category;
         $product->unit = $request->unit;
+        $product->price = $request->price;
         $product->quantity = $request->quantity;
         $product->quantity_in_stock = $request->quantity_in_stock;
 
         $product->save();
 
-        return redirect()->route('home');
+        return redirect()->route('allProducts');
     }
 
     /**
@@ -107,8 +118,12 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
+
     {
-        //
+
+        $product->delete();
+        return redirect()->route('allProducts')
+            ->with('success', 'Product deleted successfully');
     }
 }

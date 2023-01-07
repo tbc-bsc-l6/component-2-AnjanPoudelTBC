@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('category', 50);
             $table->string('unit', 10);
             $table->integer('quantity');
+            $table->double('price', 8, 2);
             $table->integer('quantity_in_stock');
             $table->timestamps();
         });

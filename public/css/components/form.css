@@ -55,3 +55,7 @@
 
 option:first-child{
 }
+
+.error-input{
+    border-color: var(--danger-color) !important;
+}

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.home');
+    return view('pages.home', ['products' => Product::all()]);
 })->name('home');
 
 // Routes for product
@@ -26,6 +27,8 @@ Route::get('/', function () {
 Route::get('/products', [ProductController::class, 'index'])->name('allProducts');
 Route::get('/products/add', [ProductController::class, 'create']);
 Route::post('/products/add', [ProductController::class, 'store']);
+Route::delete('/products/{product}', [ProductController::class, 'destroy']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
