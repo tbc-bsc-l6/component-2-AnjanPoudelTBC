@@ -35,20 +35,13 @@
                 <td>{{$product->quantity_in_stock}}</td>
                 <td>{{$product->price}}</td>
                 <td class="action-row">
-                    <div class="action-icon">
-                        <img src="/assets/editicon.png" />
-                    </div>
-                    <div class="action-icon">
-                        <form method="POST" action='/products/{{$product->id}}'>
-                            @csrf
-                            @method('DELETE')
-                            <label for="delete-btn">
-                                <img src="/assets/deleteicon.png" />
-                            </label>
-                            <button type="submit" type="hidden" id="delete-btn"></button>
-                        </form>
 
-                    </div>
+                    <a class="action-icon" href="products/{{$product->id}}/edit"> <img src="/assets/editicon.png" /></a>
+                    <form action="products/{{$product->id}}" method="Post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="action-icon"> <img src="/assets/deleteicon.png" /></button>
+                    </form>
                 </td>
             </tr>
             @endforeach

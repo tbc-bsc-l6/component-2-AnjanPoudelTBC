@@ -22,11 +22,13 @@ Route::get('/', function () {
 
 // Routes for product
 
-// Route::resource('product', ProductController::class);
+//  Route::resource('products', ProductController::class);
 
 Route::get('/products', [ProductController::class, 'index'])->name('allProducts');
 Route::get('/products/add', [ProductController::class, 'create']);
 Route::post('/products/add', [ProductController::class, 'store']);
+Route::get('/products/{product}/edit', [ProductController::class, 'edit']);
+Route::patch('/products/{product}', [ProductController::class, 'update']);
 Route::delete('/products/{product}', [ProductController::class, 'destroy']);
 
 

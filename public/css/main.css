@@ -1,6 +1,9 @@
 /* Import variables */
 @import url('./variables.css');
 
+/* Import vendors */
+
+
 /* Import components */
 @import url('./components/navbar.css');
 @import url('./components/card.css');

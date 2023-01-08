@@ -8,7 +8,7 @@
   <title>Grocerires</title>
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Scripts -->
   <script src="/js/form.js"></script>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
