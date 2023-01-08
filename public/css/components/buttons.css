@@ -39,3 +39,17 @@
 .btn-full{
     width: 100%;
 }
+
+.btn-blank{
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+.btn-blank:focus{
+    outline: none;
+}
+.btn-blank:active{
+    outline: none;
+}

@@ -1,0 +1,39 @@
+.page-title{
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+}
+
+.checkout-summary{
+min-width: 320px;
+}
+.summary-container{
+    padding: 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 6px;
+
+}
+
+.checkout-title{
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.checkout-product-desc{
+    padding: 0.35rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkout-final-summary{
+    margin-top: 0.5rem;
+    border-top: 3px solid var(--secondary-color);
+    border-style: dashed;
+    padding: 1rem 0;
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

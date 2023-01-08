@@ -32,6 +32,12 @@ Route::patch('/products/{product}', [ProductController::class, 'update']);
 Route::delete('/products/{product}', [ProductController::class, 'destroy']);
 
 
+// Routes for cart 
+Route::get('/cart', function () {
+    return view('pages.cart');
+});
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
