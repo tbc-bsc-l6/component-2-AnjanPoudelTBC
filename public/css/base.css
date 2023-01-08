@@ -14,3 +14,7 @@ body{
     width: var(--main-width);
     margin: auto;
 }
+
+.page-container{
+    margin-top: 4rem;
+}

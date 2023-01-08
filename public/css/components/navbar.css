@@ -1,5 +1,5 @@
 .navbar{
-   background-color: #ededed;
+   /* background-color: #ededed; */
    width: 100%;
    padding: 1rem 0;
    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
@@ -7,7 +7,7 @@
 
 .navbar-container{
     display: flex;
-    align-items: flex-end;
+    align-items: flex-end !important;
     justify-content: space-between;
     gap: 1rem;
     width: var(--main-width);
@@ -45,7 +45,7 @@ width: 23px;
 }
 
 .navbar-left-logo{
-width:170px;
+width:150px;
 }
 
 .navbar-left-logo img{

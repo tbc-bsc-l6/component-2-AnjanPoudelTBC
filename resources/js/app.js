@@ -1,6 +1,5 @@
-import './bootstrap';
-
-import Alpine from 'alpinejs';
+import "./bootstrap";
+import Swiper from "swiper/bundle";
 
 window.Alpine = Alpine;
 

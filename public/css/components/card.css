@@ -8,15 +8,15 @@ cursor: pointer;
 
 .product-card-image{
 width: 100%;
-border-radius: 6px;
+
 }
 .product-card-image img{
 width: 100%;
-border-radius: 6px;
+border-radius: 6px 6px 0 0 ;
 }
 
 .product-card-content{
-padding: 1rem 0.75rem;
+padding: 1rem 0.45rem 0.5rem 0.45rem;
 /* font-size: var(--font-size-sm); */
 }
 .product-card-name{
@@ -26,13 +26,16 @@ font-weight: 600;
 }
 
 .product-card-category{
-padding: 0.25rem;
-border: 1px solid #ccc;
+padding: 0.1rem 0.75rem;
+
+border: 1px solid var(--primary-color);
+color: var(--primary-color);
 width: fit-content;
 margin: 0.5rem 0;
+letter-spacing: 1px;
 border-radius: 8px;
 font-size: var(--font-size-xs);
-font-family: 'Courier New', Courier, monospace;
+/* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif */
 }
 
 .product-card-price{

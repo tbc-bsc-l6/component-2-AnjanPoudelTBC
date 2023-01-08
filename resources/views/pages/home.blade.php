@@ -4,7 +4,24 @@
 
 @include('components.navbar')
 
+
 <div class="container page-container">
+
+    <div class="swiper mySwiperClass">
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- If we need controls 
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        -->
+    </div>
     @foreach($products as $product)
     <div class="product-card">
         <div class="product-card-image">
