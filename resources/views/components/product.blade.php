@@ -10,7 +10,87 @@
             Vegetable
         </div>
         <div class="product-card-price">
-            Rs. 100
+            $5.7
+        </div>
+        <button class="btn btn-primary btn-full product-card-btn">
+            Add to cart
+        </button>
+    </div>
+</div>
+
+<div class="product-card">
+    <div class="product-card-image">
+        <img src="/assets/products/spinach.jpg" alt="product-img">
+    </div>
+    <div class="product-card-content">
+        <div class="product-card-name">
+            Spinach (200 gm)
+        </div>
+        <div class="product-card-category">
+            Vegetable
+        </div>
+        <div class="product-card-price">
+            $5.7
+        </div>
+        <button class="btn btn-primary btn-full product-card-btn">
+            Add to cart
+        </button>
+    </div>
+</div>
+
+<div class="product-card">
+    <div class="product-card-image">
+        <img src="/assets/products/spinach.jpg" alt="product-img">
+    </div>
+    <div class="product-card-content">
+        <div class="product-card-name">
+            Spinach (200 gm)
+        </div>
+        <div class="product-card-category">
+            Vegetable
+        </div>
+        <div class="product-card-price">
+            $5.7
+        </div>
+        <button class="btn btn-primary btn-full product-card-btn">
+            Add to cart
+        </button>
+    </div>
+</div>
+
+<div class="product-card">
+    <div class="product-card-image">
+        <img src="/assets/products/spinach.jpg" alt="product-img">
+    </div>
+    <div class="product-card-content">
+        <div class="product-card-name">
+            Spinach (200 gm)
+        </div>
+        <div class="product-card-category">
+            Vegetable
+        </div>
+        <div class="product-card-price">
+            $5.7
+        </div>
+        <button class="btn btn-primary btn-full product-card-btn">
+            Add to cart
+        </button>
+    </div>
+</div>
+
+<div class="product-card">
+    <div class="product-card-image">
+        <img src="/assets/products/spinach.jpg" alt="product-img">
+    </div>
+    <div class="product-card-content">
+        <div class="product-card-name">
+            Spinach (200 gm)
+        </div>
+        <div class="product-card-category">
+            Vegetable
+        </div>
+        <div class="product-card-price">
+            $5.7
         </div>
         <button class="btn btn-primary btn-full product-card-btn">
             Add to cart

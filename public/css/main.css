@@ -13,5 +13,11 @@
 @import url('./components/cart-card.css');
 @import url('./components/cart-summary.css');
 
+
+/* Import Pages */
+
+@import url('./pages/home.css');
+
+
 /* Import Base */
 @import url('./base.css');
