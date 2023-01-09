@@ -40,6 +40,10 @@ Route::get('/my-products', function () {
     return view('pages.individualProduct');
 });
 
+Route::get('/categories', function () {
+    return view('pages.filterPage');
+});
+
 
 // Routes for cart 
 Route::get('/cart', function () {
