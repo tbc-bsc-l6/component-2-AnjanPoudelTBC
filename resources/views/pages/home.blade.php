@@ -90,5 +90,7 @@
     @endforeach --}}
 </div>
 
+@include('components.copyright')
+
 
 @endsection

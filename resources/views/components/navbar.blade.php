@@ -5,6 +5,19 @@
             <div class="navbar-left-logo">
                 <a href="/"> <img src="/assets/logo.png" /></a>
             </div>
+
+            <div class="dropdown show">
+                <a class="btn btn-blank dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Products
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
         </div>
         <div class="navbar-middle">
             <div class="navbar-middle-search">

@@ -1,0 +1,43 @@
+.product-page{
+
+    display: flex;
+    gap: 2rem;
+}
+
+.product-image{
+    width: 250px;
+
+}
+.product-image img{
+width: 100%;
+}
+
+.product-stats{
+    flex: 1;
+}
+.product-name{
+        font-size: var(--font-size-xl);
+        font-weight: 600;
+}
+.product-category{
+
+}
+.product-amount{
+        
+}
+.product-price{
+    font-size: var(--font-size-base);
+    font-weight: 600;
+}
+
+.product-description{
+    /* margin: ; */
+}
+.product-description-title{
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    margin: 1rem 0 0.5rem 0;
+}
+.product-add{
+margin-top: 1rem;
+}

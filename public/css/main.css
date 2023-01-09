@@ -12,12 +12,13 @@
 @import url('./components/table.css');
 @import url('./components/cart-card.css');
 @import url('./components/cart-summary.css');
+@import url('./components/copyright.css');
 
 
 /* Import Pages */
 
 @import url('./pages/home.css');
-
+@import url('./pages/productpage.css');
 
 /* Import Base */
 @import url('./base.css');

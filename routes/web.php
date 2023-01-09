@@ -32,6 +32,15 @@ Route::patch('/products/{product}', [ProductController::class, 'update']);
 Route::delete('/products/{product}', [ProductController::class, 'destroy']);
 
 
+
+//Individual Product page
+
+Route::get('/my-products', function () {
+
+    return view('pages.individualProduct');
+});
+
+
 // Routes for cart 
 Route::get('/cart', function () {
     return view('pages.cart');

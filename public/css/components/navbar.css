@@ -41,7 +41,9 @@ width: 23px;
 }
 
 .navbar-left{
-
+    display: flex;
+    align-items: end;
+    gap: 1rem;
 }
 
 .navbar-left-logo{
@@ -84,4 +86,8 @@ align-items: center;
     right: 2px;
     text-align: center;
     font-size: var(--font-size-xs);
+}
+
+.dropdown-toggle{
+    font-size: var(--font-size-base)!important;
 }
