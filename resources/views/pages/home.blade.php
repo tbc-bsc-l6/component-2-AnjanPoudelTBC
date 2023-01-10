@@ -9,13 +9,13 @@
 
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="assets/slider/1.jpg" /></div>
+                <div class="swiper-slide"><img src="assets/slider/1.png" /></div>
 
-                <div class="swiper-slide"><img src="assets/slider/12.jpg" /></div>
+                <div class="swiper-slide"><img src="assets/slider/6.png" /></div>
 
-                <div class="swiper-slide"><img src="assets/slider/14.webp" /></div>
-                <div class="swiper-slide"><img src="assets/slider/15.jpg" /></div>
-                <div class="swiper-slide"><img src="assets/slider/16.webp" /></div>
+
+                <div class="swiper-slide"><img src="assets/slider/15.png" /></div>
+                <div class="swiper-slide"><img src="assets/slider/9.png" /></div>
                 <div class="swiper-slide"><img src="assets/slider/try.jpg" /></div>
             </div>
 
