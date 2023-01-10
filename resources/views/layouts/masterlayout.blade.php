@@ -41,8 +41,8 @@
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
-      spaceBetween: 30,
+      slidesPerView: 1.25,
+            spaceBetween: 20,
       centeredSlides: true,
       grabCursor: true,
       loop: true,
@@ -50,6 +50,21 @@
     delay: 3500,
     disableOnInteraction: false,
   },
+  breakpoints: {
+          480: {
+            slidesPerView: 2.15,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2.5,
+            spaceBetween: 30,
+          },
+          1100: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+         
+        },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,

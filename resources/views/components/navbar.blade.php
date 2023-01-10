@@ -6,7 +6,7 @@
                 <a href="/"> <img src="/assets/logo.png" /></a>
             </div>
 
-            <div class="dropdown show">
+            <div class="dropdown show navbar-left-products">
                 <a class="btn btn-blank dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Products
@@ -29,6 +29,11 @@
 
         </div>
         <div class="navbar-right">
+            <div class="navbar-right-search">
+                <div class="navbar-middle-search-logo" data-toggle="modal" data-target="#searchModal">
+                    <img src="/assets/search.svg" />
+                </div>
+            </div>
             <div class="navbar-right-cart">
                 <img src="/assets/cart.svg" />
                 <div class="navbar-cart-num">
@@ -42,6 +47,68 @@
 
             </div>
         </div>
+        <div class="navbar-hamburger">
+            <div class="navbar-right-cart">
+                <img src="/assets/cart.svg" />
+                <div class="navbar-cart-num">
+                    0
+                </div>
+            </div>
+            <button class="navbar-hamburger-btn btn-blank" type="button" data-toggle="collapse"
+                data-target="#mobile-menu" aria-expanded="false" aria-controls="mobile-menu">
+                <img src="/assets/hamburger-menu.png" alt="menu" />
+            </button>
+        </div>
     </div>
 
+
+</div>
+<div class="mobile-navigation-container collapse" id="mobile-menu">
+    <div class="card card-body">
+        <div class="mobile-navigation">
+            <div class="w-100" type="button" data-toggle="collapse" data-target="#mobile-products" aria-expanded="false"
+                aria-controls="mobile-products">
+                Products
+            </div>
+            <div class="collapse" id="mobile-products">
+                <div class="card card-body">
+                    <a class="" href="#">Vegetables</a>
+                    <a class="" href="#">Fruits</a>
+                    <a class="" href="#">Drinks</a>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-navigation" data-toggle="modal" data-target="#searchModal">
+
+            <span class="search-mobile">
+                <img src="/assets/search.svg" />
+            </span> Search Products
+
+        </div>
+        <div class="mobile-navigation">
+
+            Login
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Search Your Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </div>
 </div>

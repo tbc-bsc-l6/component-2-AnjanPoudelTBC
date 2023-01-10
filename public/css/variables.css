@@ -1,6 +1,12 @@
 :root {
+
+  /* Widths */
     --main-width: 1180px;
-    --white: #ffffff;
+    --md-width:768px;
+    --sm-width:560px;
+    --xs-width:420px;
+   
+    
 
     /* Font sizes */
     --font-size-base:1rem;
@@ -11,6 +17,7 @@
     --font-size-xs:0.75rem;
 
     /* Color */
+    --white: #ffffff;
     --primary-color:#00AA95;
     --secondary-color:#ccc;
     --danger-color:rgb(211, 38, 38);

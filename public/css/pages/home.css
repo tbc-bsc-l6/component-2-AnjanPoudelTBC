@@ -11,6 +11,7 @@
 .home-section-cards{
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .home-section-banner{
@@ -20,4 +21,10 @@
 }
 .home-section-banner img{
     width: 100%;
+}
+
+@media screen and (max-width: 576px){
+    .home-section-banner{
+        width: 100%;
+    }
 }

@@ -1,5 +1,8 @@
 .copyright{
     width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     padding: 0.25rem 1rem;
     font-size: var(--font-size-sm);
     background-color: #e6e6e6;
