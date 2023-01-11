@@ -1,0 +1,64 @@
+.auth-dashboard{
+display: flex;
+gap: 4rem;
+
+}
+
+.auth-navigation{
+    max-width: 350px;
+
+}
+
+.user-profile-image{
+    width: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--secondary-color);
+
+}
+.user-profile-image img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.user-profile-name{
+    text-align: center;
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.auth-nav-container{
+    margin-top: 2rem;
+}
+
+.auth-page-content{
+    flex-grow: 1;
+}
+.auth-nav-item{
+    padding: 0.3rem 1rem;
+    text-decoration: none;
+    margin: 0.5rem 0;
+    border-radius: 6px;
+    cursor: pointer;
+    color: black;
+    background-color: transparent;
+    transition: 0.2s ease-in-out;
+}
+.auth-nav-item-active, .auth-nav-item:hover,.auth-nav-item:focus{
+    background-color: var(--secondary-color);
+}
+
+
+.logout-icon{
+    width: 20px;
+}
+
+.user-update-item{
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.user-update-item> div{
+    flex: 1;
+}

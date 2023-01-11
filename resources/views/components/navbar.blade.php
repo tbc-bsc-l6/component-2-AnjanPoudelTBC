@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="navbar-right-profile">
-                <a class="btn btn-primary btn-sm">
+                <a class="btn btn-primary btn-sm" href="{{ route('login') }}">
                     Login
                 </a>
 
@@ -85,11 +85,13 @@
             </span> Search Products
 
         </div>
-        <div class="mobile-navigation">
+        <a href="{{ route('login') }}">
+            <div class="mobile-navigation">
 
-            Login
+                Login
 
-        </div>
+            </div>
+        </a>
     </div>
 </div>
 <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalTitle"

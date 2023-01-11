@@ -40,6 +40,11 @@ Route::get('/my-products', function () {
     return view('pages.individualProduct');
 });
 
+Route::get('/my-orders', function () {
+
+    return view('pages.myOrders');
+});
+
 Route::get('/categories', function () {
     return view('pages.filterPage');
 });

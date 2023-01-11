@@ -13,6 +13,7 @@
 @import url('./components/cart-card.css');
 @import url('./components/cart-summary.css');
 @import url('./components/copyright.css');
+@import url('./components/orders.css');
 
 
 /* Import Pages */
@@ -21,5 +22,7 @@
 @import url('./pages/productpage.css');
 @import url('./pages/filterpage.css');
 @import url('./pages/404.css');
+@import url('./pages/user-profile.css');
+
 /* Import Base */
 @import url('./base.css');

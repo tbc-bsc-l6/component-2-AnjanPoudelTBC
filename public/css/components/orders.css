@@ -1,0 +1,81 @@
+.my-accordion{
+
+}
+
+.my-accordion-item{
+border: none !important;
+}
+
+.my-accordion-button{
+    border-radius: 6px;
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accordion-button:not(.collapsed){
+    background-color: var(--secondary-color);
+    box-shadow: none;
+    color: black;
+}
+
+.accordion-button:focus{
+    box-shadow: none;
+    border: 1px solid var(--secondary-color);
+}
+
+.my-orders-list{
+
+}
+
+.my-order{
+display: flex;
+justify-content: space-between;
+margin: 0.5rem 0;
+padding: 0.5rem 0;
+border-bottom: 1px solid var(--secondary-color);
+}
+.my-order:last-child{
+    border: none;
+}
+.my-order:first-child{
+    padding-top: 0;
+}
+.my-order-left{
+    display: flex;
+    gap: 1rem;
+}
+.my-order-image{
+    width: 100px;
+}
+.my-order-image img{
+    width: 100%;
+}
+
+.my-order-desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+}
+
+.my-order-name{
+    /* font-size: var(--font-size-md); */
+    font-weight: 600;
+}
+.my-order-price{
+    /* font-size: var(--font-size-md); */
+    font-weight: 600; 
+}
+
+.my-orders-summary{
+    display: flex;
+    font-size: var(--font-size-md);
+    font-weight: 600; 
+    justify-content: space-between;
+    border-top: 3px solid var(--secondary-color);
+    border-style: dashed; 
+    padding-top: 1rem;
+}

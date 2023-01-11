@@ -1,7 +1,7 @@
 .navbar{
    /* background-color: #ededed; */
    width: 100%;
-   padding: 1rem 0;
+   padding: 1rem 0 !important;
    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
 }
 
@@ -10,6 +10,7 @@
     align-items: flex-end !important;
     justify-content: space-between;
     gap: 1rem;
+    padding: 0;
     width: var(--main-width);
     margin: auto;
 
