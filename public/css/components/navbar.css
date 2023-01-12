@@ -122,6 +122,21 @@ align-items: center;
 .search-mobile img{
     width: 23px;
 }
+
+.profile-dropdown{
+    width:30px;
+    cursor: pointer;
+
+}
+.profile-dropdown::after{
+    display: none;
+}
+.profile-dropdown img{
+    width: 100%;
+    border-radius: 100%;
+    border: 1px solid var(--secondary-color);
+}
+
 @media screen and (max-width: 1200px) {
     .navbar-right-search{
         display: block;

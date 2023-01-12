@@ -63,8 +63,13 @@ font-size: var(--font-size-base);
 }
 .btn-blank:focus{
     outline: none;
+    background-color: transparent;
     box-shadow: none;
 }
 .btn-blank:active{
     outline: none;
+}
+
+.dropdown-item:active,.dropdown-item:focus{
+    background-color: var(--secondary-color) !important;
 }

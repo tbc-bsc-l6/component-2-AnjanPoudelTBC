@@ -35,7 +35,7 @@
 </head>
 
 <body>
-
+  @include('components.flash-message')
   @yield('content')
 
 

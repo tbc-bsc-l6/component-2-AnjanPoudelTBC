@@ -4,7 +4,7 @@
 @include('components.navbar')
 <div class="container page-container">
     <div class="auth-dashboard">
-        @include('components.auth-nav')
+        @include('components.auth-nav',['activePanel'=>'my-orders'])
         <div class="auth-page-content">
             <div class="my-orders-page">
                 <div class=" mb-4 text-xl font-semibold">

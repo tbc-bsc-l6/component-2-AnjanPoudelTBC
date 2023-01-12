@@ -20,5 +20,6 @@
     --white: #ffffff;
     --primary-color:#00AA95;
     --secondary-color:#ccc;
+    --secondary-light-color:rgb(236, 236, 236);
     --danger-color:rgb(211, 38, 38);
   }

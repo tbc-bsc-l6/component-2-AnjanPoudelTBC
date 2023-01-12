@@ -1,28 +1,30 @@
+@props(['activePanel'])
 <div class="auth-nav">
     <div class="auth-navigation">
         <div class="user-profile-image">
             <img src="/assets/default-user.png" alt="">
         </div>
         <div class="user-profile-name">
-            Anjan Poudel
+            {{auth()->user()->name}}
         </div>
         <div class="auth-nav-container">
 
-            <a href="" style="text-decoration: none">
-                <div class="auth-nav-item auth-nav-item-active">
+            <a href="/dashboard" style="text-decoration: none">
+                <div class="auth-nav-item {{  $activePanel=='my-profile' ? 'auth-nav-item-active' : "" }} ">
                     My Profile
                 </div>
 
 
             </a>
-            <a href="" style="text-decoration: none">
+            <a href="/my-orders" style=" text-decoration: none">
 
-                <div class="auth-nav-item">
+                <div class="auth-nav-item {{ $activePanel=='my-orders' ? 'auth-nav-item-active' : "" }} ">
                     My Orders
                 </div>
 
             </a>
-            <form action="" class="form-blank">
+            <form class="form-blank" method="POST" action="{{ route('logout') }}">
+                @csrf
                 <div class="auth-nav-item ">
                     <button class="btn btn-blank" style="display: flex; gap:1rem ; align-items:center">
                         <div>

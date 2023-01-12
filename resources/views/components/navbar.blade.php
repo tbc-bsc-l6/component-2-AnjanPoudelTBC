@@ -41,9 +41,35 @@
                 </div>
             </div>
             <div class="navbar-right-profile">
+                @guest
                 <a class="btn btn-primary btn-sm" href="{{ route('login') }}">
                     Login
                 </a>
+                @endguest
+
+                @auth('')
+                <div class="dropdown">
+                    <div class="dropdown-toggle profile-dropdown" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="/assets/default-user.png" />
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">My Profile</a>
+                        <a class="dropdown-item" href="#">My Orders</a>
+                        <div class=" dropdown-item">
+                            <form class="form-blank dropdown-item" method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="btn-blank">
+                                    Logout
+                                </button>
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>
+                @endauth
+
 
             </div>
         </div>

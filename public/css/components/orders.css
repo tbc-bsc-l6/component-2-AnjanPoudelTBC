@@ -16,7 +16,7 @@ border: none !important;
 }
 
 .accordion-button:not(.collapsed){
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-light-color);
     box-shadow: none;
     color: black;
 }

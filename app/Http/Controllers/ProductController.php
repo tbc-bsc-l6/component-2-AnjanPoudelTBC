@@ -75,7 +75,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('allProducts');
+        return redirect()->route('allProducts')->with('success', 'Product added successfully');
     }
 
     /**

@@ -19,7 +19,9 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers {
+        redirectPath as laravelRedirectPath;
+    }
 
     /**
      * Where to redirect users after login.
@@ -27,6 +29,15 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+
+    public function redirectPath()
+    {
+        // Do your logic to flash data to session...
+        session()->flash('success', 'your message');
+
+        // Return the results of the method we are overriding that we aliased.
+        return $this->laravelRedirectPath();
+    }
 
     /**
      * Create a new controller instance.
