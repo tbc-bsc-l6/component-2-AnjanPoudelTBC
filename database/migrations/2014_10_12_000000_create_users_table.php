@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('password');
             $table->string('gender')->nullable();
             $table->string('phone_number')->nullable();
+            $table->string('user_role')->default();
+
             $table->rememberToken();
             $table->timestamps();
         });

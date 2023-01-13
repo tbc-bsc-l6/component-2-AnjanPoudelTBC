@@ -26,11 +26,11 @@ Route::get('/', function () {
 //  Route::resource('products', ProductController::class);
 
 Route::get('/products', [ProductController::class, 'index'])->name('allProducts');
-Route::get('/products/add', [ProductController::class, 'create']);
-Route::post('/products/add', [ProductController::class, 'store']);
-Route::get('/products/{product}/edit', [ProductController::class, 'edit']);
-Route::patch('/products/{product}', [ProductController::class, 'update']);
-Route::delete('/products/{product}', [ProductController::class, 'destroy']);
+Route::get('/products/add', [ProductController::class, 'create'])->middleware('adminOnly');
+Route::post('/products/add', [ProductController::class, 'store'])->middleware('adminOnly');
+Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->middleware('adminOnly');
+Route::patch('/products/{product}', [ProductController::class, 'update'])->middleware('adminOnly');
+Route::delete('/products/{product}', [ProductController::class, 'destroy'])->middleware('adminOnly');
 
 
 

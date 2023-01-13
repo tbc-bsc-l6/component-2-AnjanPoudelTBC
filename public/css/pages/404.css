@@ -3,6 +3,12 @@ width: 500px;
 margin: auto;
 }
 
-.page-not-found img{
+.access-denied{
+   width: 700px;
+   margin: auto;
+}
+
+.page-not-found img , .access-denied img{
    width: 100%;
 }
+

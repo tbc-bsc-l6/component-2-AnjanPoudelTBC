@@ -9,7 +9,7 @@
         </div>
         <div class="auth-nav-container">
 
-            <a href="/dashboard" style="text-decoration: none">
+            <a href="/profile" style="text-decoration: none">
                 <div class="auth-nav-item {{  $activePanel=='my-profile' ? 'auth-nav-item-active' : "" }} ">
                     My Profile
                 </div>

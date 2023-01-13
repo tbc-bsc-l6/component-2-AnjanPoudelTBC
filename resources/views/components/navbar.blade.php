@@ -34,11 +34,15 @@
                     <img src="/assets/search.svg" />
                 </div>
             </div>
+
+
             <div class="navbar-right-cart">
-                <img src="/assets/cart.svg" />
-                <div class="navbar-cart-num">
-                    0
-                </div>
+                <a href="/cart">
+                    <img src="/assets/cart.svg" />
+                    <div class="navbar-cart-num">
+                        0
+                    </div>
+                </a>
             </div>
             <div class="navbar-right-profile">
                 @guest
@@ -54,8 +58,8 @@
                         <img src="/assets/default-user.png" />
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">My Profile</a>
-                        <a class="dropdown-item" href="#">My Orders</a>
+                        <a class="dropdown-item" href="/profile">My Profile</a>
+                        <a class="dropdown-item" href="/my-orders">My Orders</a>
                         <div class=" dropdown-item">
                             <form class="form-blank dropdown-item" method="POST" action="{{ route('logout') }}">
                                 @csrf
