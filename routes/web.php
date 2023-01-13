@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Product;
@@ -32,6 +33,11 @@ Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->midd
 Route::patch('/products/{product}', [ProductController::class, 'update'])->middleware('adminOnly');
 Route::delete('/products/{product}', [ProductController::class, 'destroy'])->middleware('adminOnly');
 
+// CAtegories route
+
+Route::get('/categories', [CategoryController::class, 'index'])->name('allCategories');
+Route::post('/categories/add', [CategoryController::class, 'store'])->name('addCategory');
+Route::get('/categories/add', [CategoryController::class, 'create'])->name('addCategoryForm');
 
 
 //Individual Product page
@@ -46,7 +52,7 @@ Route::get('/my-orders', function () {
     return view('pages.myOrders');
 });
 
-Route::get('/categories', function () {
+Route::get('/my-categories', function () {
     return view('pages.filterPage');
 });
 
