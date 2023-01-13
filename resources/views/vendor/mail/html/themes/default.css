@@ -80,7 +80,7 @@ img {
     -premailer-cellpadding: 0;
     -premailer-cellspacing: 0;
     -premailer-width: 100%;
-    background-color: #edf2f7;
+    background-color: #d8e1de;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -121,9 +121,9 @@ img {
     -premailer-cellpadding: 0;
     -premailer-cellspacing: 0;
     -premailer-width: 100%;
-    background-color: #edf2f7;
-    border-bottom: 1px solid #edf2f7;
-    border-top: 1px solid #edf2f7;
+    background-color: #d8e1de;
+    border-bottom: 1px solid #d8e1de;
+    border-top: 1px solid #d8e1de;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -231,7 +231,7 @@ img {
 .button-blue,
 .button-primary {
     padding: 0.3rem 1.25rem;
-    background-color: var(--primary-color);
+    background-color: #00AA95;
 }
 
 .button-green,
@@ -260,7 +260,7 @@ img {
 }
 
 .panel-content {
-    background-color: #edf2f7;
+    background-color: #d8e1de;
     color: #718096;
     padding: 16px;
 }
