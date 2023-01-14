@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -39,7 +40,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $validatedData = Validator::make($request->all(), [
-            'name' => 'required|max:25',
+            'name' => 'required|max:25|unique:categories,name,'
         ]);
         if ($validatedData->fails()) {
             return redirect()->back()
@@ -50,6 +51,7 @@ class CategoryController extends Controller
         $category = new Category();
 
         $category->name = $request->name;
+        $category->slug = Str::slug($request->name);
 
         $category->save();
 
@@ -75,7 +77,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('product.editProduct', ['category' => $category]);
+        return view('category.editCategory', ['category' => $category]);
     }
 
     /**
@@ -85,11 +87,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
         $validatedData = Validator::make($request->all(), [
 
-            'product_name' => 'required|max:25',
+            'name' => 'required|max:25|unique:categories,name,' . $category->id,
 
         ]);
 
@@ -98,6 +100,11 @@ class CategoryController extends Controller
                 ->withErrors($validatedData)
                 ->withInput();
         }
+        $category->name = $request->name;
+        $category->slug = Str::slug($request->name);
+        $category->save();
+
+        return redirect()->route('allCategories')->with('success', 'Category Updated Successfully');
     }
 
     /**
@@ -109,7 +116,7 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('allProducts')
+        return redirect()->route('allCategories')
             ->with('success', 'Category deleted successfully');
     }
 }
