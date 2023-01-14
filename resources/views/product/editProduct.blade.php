@@ -51,10 +51,10 @@
             <select name="category" id="category"
                 class=" my-form-select border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full {{count($errors->get('category'))>0? 'error-input' :''}}">
                 <option value="">---- Choose the product category ----</option>
-                <option value="vegetable" {{ $product->category=="vegetable" ? 'selected' : '' }}>Vegetables</option>
-                <option value="fruit" {{ $product->category=="fruit" ? 'selected' : '' }}>Fruit</option>
-                <option value="meat" {{ $product->category=="meat" ? 'selected' : '' }}>Meat</option>
-                <option value="drink" {{ $product->category=="drink" ? 'selected' : '' }}>Drinks</option>
+                @foreach($categories as $key => $category)
+                <option value="{{$category->id}}" {{ $product->category_id==$category->id ? 'selected' : '' }}>
+                    {{$category->name}}</option>
+                @endforeach
             </select>
             <x-input-error :messages="$errors->get('category')" class="mt-2" />
         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -26,7 +27,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('product.addProduct');
+        $categories = Category::all();
+        return view('product.addProduct', ['categories' => $categories]);
     }
 
     /**
@@ -67,7 +69,7 @@ class ProductController extends Controller
         }
         $product->product_name = $request->product_name;
         $product->description = $request->product_description;
-        $product->category = $request->category;
+        $product->category_id = $request->category;
         $product->unit = $request->unit;
         $product->price = $request->price;
         $product->quantity = $request->quantity;
@@ -97,7 +99,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('product.editProduct', ['product' => $product]);
+        $categories = Category::all();
+        return view('product.editProduct', ['product' => $product, "categories" => $categories]);
     }
 
     /**
@@ -141,7 +144,7 @@ class ProductController extends Controller
         $product->image_path = $filename;
         $product->product_name = $request->product_name;
         $product->description = $request->product_description;
-        $product->category = $request->category;
+        $product->category_id = $request->category;
         $product->unit = $request->unit;
         $product->price = $request->price;
         $product->quantity = $request->quantity;

@@ -13,9 +13,10 @@
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    @foreach($categories as $key => $category)
+                    <a class="dropdown-item" href="#">{{$category->name}}</a>
+                    @endforeach
+
                 </div>
             </div>
         </div>

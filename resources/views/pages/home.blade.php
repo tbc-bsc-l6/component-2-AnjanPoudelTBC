@@ -2,7 +2,7 @@
 
 @section( 'content')
 
-@include('components.navbar')
+@include('components.navbar', ['categories' => \App\Models\Category::all()])
 
 <div class="page-container">
     <div class=" ">

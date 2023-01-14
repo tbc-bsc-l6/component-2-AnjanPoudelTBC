@@ -29,7 +29,7 @@
                 <td>{{$product->product_name}}</td>
                 <td>{{$product->image_path}}</td>
                 <td>{{$product->description}}</td>
-                <td>{{$product->category}}</td>
+                <td>{{$product->category_id}}</td>
                 <td>{{$product->quantity}}</td>
                 <td>{{$product->unit}}</td>
                 <td>{{$product->quantity_in_stock}}</td>
