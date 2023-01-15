@@ -25,7 +25,7 @@ class ProductFactory extends Factory
             'description' => fake()->sentence(3),
             'price' => fake()->randomFloat(1, 2, 20),
             'quantity_in_stock' => fake()->numberBetween(3, 150),
-            'image_path' => fake()->image('public/assets/products', 640, 480, null, false),
+            'image_path' => "/assets/products/" . fake()->numberBetween(1, 30) . ".jpg",
             'quantity' => fake()->numberBetween(1, 1000),
             'unit' => Str::random(rand(2, 3)),
             'category_id' => fake()->numberBetween(1, 5),

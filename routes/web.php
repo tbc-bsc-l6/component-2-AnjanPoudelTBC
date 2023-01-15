@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Product;
@@ -18,20 +19,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home', ['products' => Product::all()]);
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Routes for product
 
 //  Route::resource('products', ProductController::class);
 
-Route::get('/products', [ProductController::class, 'index'])->name('allProducts');
-Route::get('/products/add', [ProductController::class, 'create']);
-Route::post('/products/add', [ProductController::class, 'store']);
-Route::get('/products/{product}/edit', [ProductController::class, 'edit']);
-Route::patch('/products/{product}', [ProductController::class, 'update']);
-Route::delete('/products/{product}', [ProductController::class, 'destroy']);
+Route::get('/admin/products', [ProductController::class, 'index'])->name('allProducts');
+Route::get('/admin/products/add', [ProductController::class, 'create']);
+Route::post('/admin/products/add', [ProductController::class, 'store']);
+Route::get('/admin/products/{product}/edit', [ProductController::class, 'edit']);
+Route::patch('/admin/products/{product}', [ProductController::class, 'update']);
+Route::delete('/admin/products/{product}', [ProductController::class, 'destroy']);
 
 //->middleware('adminOnly');
 
