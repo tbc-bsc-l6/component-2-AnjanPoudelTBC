@@ -105,6 +105,9 @@ align-items: center;
 .navbar-hamburger-btn{
     width: 25px;
 }
+.navbar-hamburger-btn img{
+    width: 25px;
+}
 
 .mobile-navigation-container{
     display: none;
@@ -155,6 +158,9 @@ align-items: center;
 
     .navbar{
         padding: 0.8rem 0;
+    }
+    .navbar-container{
+        padding: 0 1rem;
     }
 
     .navbar-hamburger{

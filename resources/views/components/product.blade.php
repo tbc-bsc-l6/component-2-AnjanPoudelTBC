@@ -1,96 +1,17 @@
 <div class="product-card">
     <div class="product-card-image">
-        <img src="/assets/products/spinach.jpg" alt="product-img">
+        <img src="{{$product->image_path}}" alt="product-img">
     </div>
     <div class="product-card-content">
         <div class="product-card-name">
-            Spinach (200 gm)
+            {{$product->product_name}} ({{$product->quantity}} {{$product->unit}})
         </div>
         <div class="product-card-category">
-            Vegetable
-        </div>
-        <div class="product-card-price">
-            $5.7
-        </div>
-        <button class="btn btn-primary btn-full product-card-btn">
-            Add to cart
-        </button>
-    </div>
-</div>
+            {{$product->category->name}}
 
-<div class="product-card">
-    <div class="product-card-image">
-        <img src="/assets/products/spinach.jpg" alt="product-img">
-    </div>
-    <div class="product-card-content">
-        <div class="product-card-name">
-            Spinach (200 gm)
-        </div>
-        <div class="product-card-category">
-            Vegetable
         </div>
         <div class="product-card-price">
-            $5.7
-        </div>
-        <button class="btn btn-primary btn-full product-card-btn">
-            Add to cart
-        </button>
-    </div>
-</div>
-
-<div class="product-card">
-    <div class="product-card-image">
-        <img src="/assets/products/spinach.jpg" alt="product-img">
-    </div>
-    <div class="product-card-content">
-        <div class="product-card-name">
-            Spinach (200 gm)
-        </div>
-        <div class="product-card-category">
-            Vegetable
-        </div>
-        <div class="product-card-price">
-            $5.7
-        </div>
-        <button class="btn btn-primary btn-full product-card-btn">
-            Add to cart
-        </button>
-    </div>
-</div>
-
-<div class="product-card">
-    <div class="product-card-image">
-        <img src="/assets/products/spinach.jpg" alt="product-img">
-    </div>
-    <div class="product-card-content">
-        <div class="product-card-name">
-            Spinach (200 gm)
-        </div>
-        <div class="product-card-category">
-            Vegetable
-        </div>
-        <div class="product-card-price">
-            $5.7
-        </div>
-        <button class="btn btn-primary btn-full product-card-btn">
-            Add to cart
-        </button>
-    </div>
-</div>
-
-<div class="product-card">
-    <div class="product-card-image">
-        <img src="/assets/products/spinach.jpg" alt="product-img">
-    </div>
-    <div class="product-card-content">
-        <div class="product-card-name">
-            Spinach (200 gm)
-        </div>
-        <div class="product-card-category">
-            Vegetable
-        </div>
-        <div class="product-card-price">
-            $5.7
+            ${{$product->price}}
         </div>
         <button class="btn btn-primary btn-full product-card-btn">
             Add to cart

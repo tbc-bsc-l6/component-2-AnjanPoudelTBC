@@ -23,8 +23,34 @@
     width: 100%;
 }
 
+.home-products{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+
+}
+
+@media screen and (max-width: 1200px){
+    .home-products{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 992px){
+    .home-products{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 768px){
+    .home-products{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 @media screen and (max-width: 576px){
     .home-section-banner{
         width: 100%;
+    }
+    .home-products{
+        grid-template-columns: repeat(2, 1fr);
     }
 }

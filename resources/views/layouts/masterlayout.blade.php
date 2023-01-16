@@ -36,8 +36,13 @@
 
 <body>
   @include('components.flash-message')
-  @yield('content')
+  @include('components.navbar', ['categories' => \App\Models\Category::all()])
 
+
+  <div class="page-container">
+    @yield('content')
+  </div>
+  @include('components.copyright')
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>

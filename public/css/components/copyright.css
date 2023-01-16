@@ -8,3 +8,9 @@
     background-color: #e6e6e6;
     text-align: center;
 }
+
+@media screen and (max-width: 576px){
+    .copyright{
+        font-size: var(--font-size-xs);
+    }
+}

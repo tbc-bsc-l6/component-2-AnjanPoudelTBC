@@ -81,3 +81,19 @@
 .cart-quantity{
     padding: 0.25rem 0.5rem;
 }
+
+@media screen and (max-width: 768px){
+    .cart-container{
+        flex-direction: column-reverse;
+    }
+    .cart-card{
+        gap: 1rem;
+    }
+    .cart-card-left{
+        gap: 0.5rem;
+    }
+    .cart-card-image{
+        width: 80px;
+        cursor: pointer;
+    }
+}

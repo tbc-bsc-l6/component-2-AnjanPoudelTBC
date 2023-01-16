@@ -21,12 +21,16 @@
             </div>
         </div>
         <div class="navbar-middle">
-            <div class="navbar-middle-search">
-                <div class="navbar-middle-search-logo">
-                    <img src="/assets/search.svg" />
+            <form action="" class="form-blank">
+                <div class="navbar-middle-search">
+                    <div class="navbar-middle-search-logo">
+                        <img src="/assets/search.svg" />
+                    </div>
+                    <input placeholder="Find Your Products here ..." />
+                    <input type="submit" hidden />
                 </div>
-                <input placeholder="Find Your Products here ..." />
-            </div>
+            </form>
+
 
         </div>
         <div class="navbar-right">
