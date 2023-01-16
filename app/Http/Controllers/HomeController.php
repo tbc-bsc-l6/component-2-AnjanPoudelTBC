@@ -25,9 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(5);
-        $ourPicks = Product::paginate(5);
-        $vegetables = Product::paginate(5);
+        $products = Product::with('category')->paginate(5);
+        $ourPicks = Product::with('category')->paginate(5);
+        $vegetables = Product::with('category')->paginate(5);
         return view('pages.home', ['products' => $products, "ourPicks" => $ourPicks, "vegetables" => $vegetables]);
     }
 }

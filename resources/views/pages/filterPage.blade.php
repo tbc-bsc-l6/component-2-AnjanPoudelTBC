@@ -2,9 +2,7 @@
 
 @section( 'content')
 
-@include('components.navbar')
-<div class="container page-container">
-
+<div class="container">
     <div class="category-page">
 
         <div class="page-title">
@@ -95,7 +93,7 @@
                 </div>
 
                 <div class="category-products-data">
-                    @include('components.product')
+                    {{-- @include('components.product') --}}
                 </div>
 
             </div>
@@ -104,5 +102,5 @@
     </div>
 </div>
 
-@include('components.copyright')
+
 @endsection

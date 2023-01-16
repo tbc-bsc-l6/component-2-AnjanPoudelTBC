@@ -2,39 +2,31 @@
 
 @section( 'content')
 
-@include('components.navbar')
-
-<div class="container page-container">
+<div class="container ">
 
     <div class="product-page">
         <div class="product-image">
-            <img src="/assets/products/spinach.jpg" />
+            <img src="{{$product->image_path}}" />
         </div>
         <div class="product-stats">
             <div class="product-name">
-                Spinach
+                {{$product->product_name}}
             </div>
             <div class="product-category">
-                Category : Vegetable
+                Category : {{$product->category->name}}
             </div>
 
             <div class="product-amount">
-                Amount : 200 grams
+                Amount : {{$product->quantity}} {{$product->unit}}
             </div>
             <div class="product-price">
-                Price : $5.70
+                Price : ${{$product->price}}
             </div>
             <div class="product-description">
                 <div class="product-description-title">
                     Product Description
                 </div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse minima, assumenda saepe rerum eveniet id
-                quasi soluta molestias et quod unde? Dolor pariatur commodi magnam reiciendis quis cum recusandae quia
-                iste et. Blanditiis, libero architecto molestiae distinctio aliquam, fugit provident minima iste ratione
-                sint nisi dolorum rerum dolore optio, corrupti possimus dolorem cum quasi. Quae facere inventore sed
-                ipsa autem, aliquam, repudiandae iusto a quam minima velit ullam doloribus dignissimos, corrupti illo
-                rerum libero. Iure saepe maiores laudantium facere nam similique assumenda, dolores ipsum cum ducimus ea
-                illum consequuntur veniam perspiciatis mollitia rerum quod soluta est aliquam ut quisquam nihil?
+                {{$product->description}}
 
             </div>
 
@@ -53,11 +45,10 @@
                 Similar Products
             </div>
             <div class="home-section-cards">
-                @include('components.product')
+                @include('components.homeProducts',['products'=>$similarProducts])
             </div>
         </div>
     </div>
 </div>
 
-@include('components.copyright')
 @endsection

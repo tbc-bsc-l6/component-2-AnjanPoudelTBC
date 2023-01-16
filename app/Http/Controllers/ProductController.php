@@ -86,9 +86,14 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        $category_id = $product->category->id;
+        $similarProducts = Category::findOrFail($category_id)->product->except($product->id)->take(20);
+        $similarProducts = $similarProducts->random(min($similarProducts->count(), 5));
+
+
+        return view('pages.individualProduct', ['product' => $product, 'similarProducts' => $similarProducts]);
     }
 
     /**

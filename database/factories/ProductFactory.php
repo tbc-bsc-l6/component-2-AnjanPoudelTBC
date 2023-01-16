@@ -22,7 +22,7 @@ class ProductFactory extends Factory
         return [
             //  'category_id'=>Category::factory(),
             'product_name' => fake()->word(),
-            'description' => fake()->sentence(3),
+            'description' => fake()->sentence(20),
             'price' => fake()->randomFloat(1, 2, 20),
             'quantity_in_stock' => fake()->numberBetween(3, 150),
             'image_path' => "/assets/products/" . fake()->numberBetween(1, 30) . ".jpg",

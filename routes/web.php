@@ -46,10 +46,7 @@ Route::delete('/categories/{category}', [CategoryController::class, 'destroy']);
 
 //Individual Product page
 
-Route::get('/my-products', function () {
-
-    return view('pages.individualProduct');
-});
+Route::get('/product/{product}', [ProductController::class, 'show']);
 
 Route::get('/my-orders', function () {
 

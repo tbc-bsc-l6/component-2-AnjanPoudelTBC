@@ -31,7 +31,7 @@ width: 100%;
 }
 
 .product-description{
-    /* margin: ; */
+    min-height: 130px;
 }
 .product-description-title{
     font-size: var(--font-size-md);

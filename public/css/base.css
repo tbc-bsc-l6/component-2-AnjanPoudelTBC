@@ -41,3 +41,10 @@ body{
     padding: 2.5rem 0;
 }
 }
+a{
+  text-decoration: none;
+}
+a:focus,a:hover{
+  text-decoration: none;
+  color: inherit;
+}
