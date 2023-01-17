@@ -174,4 +174,11 @@ class ProductController extends Controller
         return redirect()->route('allProducts')
             ->with('success', 'Product deleted successfully');
     }
+
+    public function search()
+    {
+        // dd($request->category);
+
+        return view('pages.filterPage', ['products' =>  Product::filter(request(['search', 'category', 'price_order', 'name_order']))->get(), 'categories' => Category::all()]);
+    }
 }

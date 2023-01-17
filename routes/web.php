@@ -64,6 +64,8 @@ Route::get('/cart', function () {
 });
 
 
+Route::get('/products', [ProductController::class, 'search']);
+
 // Route::get('/profile', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
