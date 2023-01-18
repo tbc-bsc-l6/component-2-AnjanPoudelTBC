@@ -79,3 +79,43 @@ input[type=checkbox]:hover,input[type=checkbox]:focus, input[type=radio]:focus{
 label{
     margin-bottom: 0 !important;
 }
+
+.mobile-search{
+    width: 100%;
+    border-radius: 4px;
+
+    
+}
+
+.mobile-search:focus{
+    box-shadow: none;
+    outline: none;
+}
+.mobile-filter{
+    display: none;
+}
+
+@media screen and (max-width: 992px){
+
+    .desktop-search{
+        display: none;
+    }
+    .mobile-filter{
+        display: block;
+    }
+    .category-products-data{
+        
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media screen and (max-width: 576px){
+    .category-products-data{
+        
+        grid-template-columns: repeat(2,1fr);
+    }
+    .filter-products{
+        padding-right: 0;
+        border: none;
+    }
+}

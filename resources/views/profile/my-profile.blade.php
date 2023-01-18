@@ -1,9 +1,8 @@
 @extends('layouts.masterlayout')
 
 @section( 'content')
-@include('components.navbar')
 
-<div class="container page-container">
+<div class="container ">
     <div class="auth-dashboard">
         @include('components.auth-nav',['activePanel'=>'my-profile'])
         <div class="auth-page-content">

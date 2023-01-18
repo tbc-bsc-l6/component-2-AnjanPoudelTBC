@@ -1,0 +1,16 @@
+.empty-cart{
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+}
+.empty-cart-image img{
+    width: 350px;
+    margin-bottom: 1.5rem;
+}
+
+.empty-notice{
+    max-width: 350px;
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}

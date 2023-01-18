@@ -23,6 +23,7 @@
 @import url('./pages/filterpage.css');
 @import url('./pages/404.css');
 @import url('./pages/user-profile.css');
+@import url('./pages/cart.css');
 
 /* Import Base */
 @import url('./base.css');

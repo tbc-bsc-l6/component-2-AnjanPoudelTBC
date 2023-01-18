@@ -36,7 +36,8 @@
 
 <body>
   @include('components.flash-message')
-  @include('components.navbar', ['categories' => \App\Models\Category::all()])
+  @include('components.navbar', ['categories' =>
+  \App\Models\Category::all()])
 
 
   <div class="page-container">

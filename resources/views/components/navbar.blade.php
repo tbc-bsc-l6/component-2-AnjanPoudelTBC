@@ -1,3 +1,20 @@
+@php
+$numberOfCartItems =0;
+$total=0;
+if(Auth::id()){
+$cartItems = App\Models\Cart::latest()->where('user_id',Auth::id())->get();
+
+$tempNum = 0;
+$tempTotal =0;
+foreach ($cartItems as $key => $cartItem) {
+$tempNum = $tempNum+ $cartItem->quantity;
+$tempTotal = $tempTotal + $cartItem->quantity * $cartItem->price;
+}
+$numberOfCartItems = $tempNum;
+$total = $tempTotal;
+}
+@endphp
+
 <div class="navbar">
     <div class="container navbar-container">
         <div class="navbar-left">
@@ -14,7 +31,7 @@
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     @foreach($categories as $key => $category)
-                    <a class="dropdown-item" href="#">{{$category->name}}</a>
+                    <a class="dropdown-item" href="/products?category%5B%5D={{$category->id}}">{{$category->name}}</a>
                     @endforeach
 
                 </div>
@@ -45,7 +62,7 @@
                 <a href="/cart">
                     <img src="/assets/cart.svg" />
                     <div class="navbar-cart-num">
-                        0
+                        {{$numberOfCartItems}}
                     </div>
                 </a>
             </div>
@@ -107,9 +124,9 @@
             </div>
             <div class="collapse" id="mobile-products">
                 <div class="card card-body">
-                    <a class="" href="#">Vegetables</a>
-                    <a class="" href="#">Fruits</a>
-                    <a class="" href="#">Drinks</a>
+                    @foreach($categories as $key => $category)
+                    <a class="dropdown-item" href="/products?category%5B%5D={{$category->id}}">{{$category->name}}</a>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -120,12 +137,12 @@
             </span> Search Products
 
         </div>
-        <a href="{{ route('login') }}">
-            <div class="mobile-navigation">
 
+        <div class="mobile-navigation">
+            <a href="{{ route('login') }}">
                 Login
-
-            </div>
+            </a>
+        </div>
         </a>
     </div>
 </div>
@@ -139,13 +156,15 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Search</button>
-            </div>
+            <form method="GET" action="/products">
+                <div class="modal-body">
+                    <input type="text" name="search" placeholder="search your product ..." class="mobile-search" />
+                </div>
+                <div class="modal-footer">
+                    {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

@@ -14,9 +14,25 @@
             <div class="product-card-price">
                 ${{$product->price}}
             </div>
-            <button class="btn btn-primary btn-full product-card-btn">
-                Add to cart
-            </button>
+
+            @guest
+            <form action="/login" class="form-blank">
+                <button type="submit" class="btn btn-primary btn-full product-card-btn">
+                    Add to cart
+                </button>
+            </form>
+            @endguest
+            @auth('')
+            <form method="POST" action="/cart/add" class="form-blank">
+                @csrf
+                <input hidden name="quantity" value=1 />
+                <input hidden name="product" value="{{$product->id}}" />
+                <button type="submit" class="btn btn-primary btn-full product-card-btn">
+                    Add to cart
+                </button>
+            </form>
+            @endauth
+
         </div>
     </div>
 </a>

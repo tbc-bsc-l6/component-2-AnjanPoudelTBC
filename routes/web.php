@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -59,10 +60,10 @@ Route::get('/my-categories', function () {
 
 
 // Routes for cart 
-Route::get('/cart', function () {
-    return view('pages.cart');
-});
-
+Route::get('/cart', [CartController::class, 'getCartItems']);
+Route::post('/cart/add', [CartController::class, 'addProduct']);
+Route::delete('/cart/{cart}', [CartController::class, 'deleteCartItem']);
+Route::put('/cart/{cart}', [CartController::class, 'updateCart']);
 
 Route::get('/products', [ProductController::class, 'search']);
 
