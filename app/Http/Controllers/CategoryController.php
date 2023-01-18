@@ -18,7 +18,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        return view('category.categories', ['categories' => $categories]);
+        return view('pages.admin.category.categories', ['categories' => $categories]);
     }
 
     /**
@@ -28,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('category.addCategory');
+        return view('pages.admin.category.addCategory');
     }
 
     /**
@@ -77,7 +77,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('category.editCategory', ['category' => $category]);
+        return view('pages.admin.category.editCategory', ['category' => $category]);
     }
 
     /**

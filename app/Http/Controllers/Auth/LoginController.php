@@ -30,6 +30,7 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+
     public function redirectPath()
     {
         // Do your logic to flash data to session...

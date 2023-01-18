@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -33,17 +34,22 @@ Route::get('/admin/products/{product}/edit', [ProductController::class, 'edit'])
 Route::patch('/admin/products/{product}', [ProductController::class, 'update']);
 Route::delete('/admin/products/{product}', [ProductController::class, 'destroy']);
 
+
 //->middleware('adminOnly');
+
+
+// Route for admin side
+Route::get('/admin/dashboard', [DashboardController::class, 'index']);
 
 
 // CAtegories route
 
-Route::get('/categories', [CategoryController::class, 'index'])->name('allCategories');
-Route::post('/categories/add', [CategoryController::class, 'store'])->name('addCategory');
-Route::get('/categories/add', [CategoryController::class, 'create'])->name('addCategoryForm');
-Route::patch('/categories/{category}', [CategoryController::class, 'update']);
-Route::get('/categories/{category}/edit', [CategoryController::class, 'edit']);
-Route::delete('/categories/{category}', [CategoryController::class, 'destroy']);
+Route::get('admin/categories', [CategoryController::class, 'index'])->name('allCategories');
+Route::post('admin/categories/add', [CategoryController::class, 'store'])->name('addCategory');
+Route::get('admin/categories/add', [CategoryController::class, 'create'])->name('addCategoryForm');
+Route::patch('admin/categories/{category}', [CategoryController::class, 'update']);
+Route::get('admin/categories/{category}/edit', [CategoryController::class, 'edit']);
+Route::delete('admin/categories/{category}', [CategoryController::class, 'destroy']);
 
 //Individual Product page
 

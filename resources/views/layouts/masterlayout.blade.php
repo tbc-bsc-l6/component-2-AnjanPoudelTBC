@@ -36,8 +36,16 @@
 
 <body>
   @include('components.flash-message')
+
+  @cannot('admin')
   @include('components.navbar', ['categories' =>
   \App\Models\Category::all()])
+  @endcannot
+
+  @can('admin')
+  @include('components.adminNav')
+  @endcan
+
 
 
   <div class="page-container">

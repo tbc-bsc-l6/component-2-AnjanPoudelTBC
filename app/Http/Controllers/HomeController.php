@@ -25,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         $products = Product::with('category')->paginate(5);
         $ourPicks = Product::with('category')->paginate(5);
         $vegetables = Product::with('category')->paginate(5);
