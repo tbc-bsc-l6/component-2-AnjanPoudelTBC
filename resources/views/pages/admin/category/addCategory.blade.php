@@ -5,7 +5,7 @@
     <div class="auth-dashboard">
         @include('components.auth-nav',['activePanel'=>'categories'])
         <form class="my-form my-create-form" method="POST" enctype="multipart/form-data"
-            action="{{ url('categories/add') }}">
+            action="{{ url('/admin/categories/add') }}">
             @csrf
 
             <div class=" mb-6 text-xl font-semibold">

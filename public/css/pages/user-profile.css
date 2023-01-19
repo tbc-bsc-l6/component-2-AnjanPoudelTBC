@@ -106,7 +106,7 @@ gap: 4rem;
 }
 
 .auth-page-content{
-    overflow: scroll;
+    overflow: auto;
 }
 
 .auth-nav-mobile{
