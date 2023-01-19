@@ -15,10 +15,10 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function cart()
-    {
-        return $this->hasOne(Cart::class);
-    }
+    // public function cart()
+    // {
+    //     return $this->hasOne(Cart::class);
+    // }
 
 
 

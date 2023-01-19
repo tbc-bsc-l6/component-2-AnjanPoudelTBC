@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('order_items', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('order_id');
             $table->foreignId('user_id');
             $table->integer('quantity');
             $table->foreignId('product_id');
@@ -22,6 +23,7 @@ return new class extends Migration
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

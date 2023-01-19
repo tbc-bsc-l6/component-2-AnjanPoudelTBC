@@ -5,7 +5,7 @@ gap: 4rem;
 }
 
 .auth-navigation{
-    max-width: 350px;
+    width: 200px;
 
 }
 
@@ -61,4 +61,50 @@ gap: 4rem;
 
 .user-update-item> div{
     flex: 1;
+}
+
+.dashboard-cards{
+    
+    align-items: center;
+    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    
+
+}
+
+.dashboard-card{
+   height: 150px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 10px;
+  
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-card:nth-child(1){
+    background-color: rgb(190, 146, 210);
+}
+.dashboard-card:nth-child(2){
+    background-color: rgb(66, 163, 82);
+}
+.dashboard-card:nth-child(3){
+    background-color: rgb(125, 125, 201);
+}
+.dashboard-card:nth-child(4){
+    background-color: rgb(234, 161, 35);
+}
+.dashboard-card-title{
+    font-size: 1.75rem;
+
+}
+.dashboard-card-value{
+    font-size: 1.5rem;
+}
+
+.auth-page-content{
+    overflow: scroll;
 }

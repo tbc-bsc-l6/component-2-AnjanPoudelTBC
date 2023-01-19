@@ -7,6 +7,16 @@
     <div class="auth-dashboard">
         @include('components.auth-nav',['activePanel'=>'products'])
         <div class="auth-page-content">
+            <div class="table-header">
+                <div class="table-header-text">
+                    Products
+                </div>
+                <a href="/admin/products/add">
+                    <div class="btn btn-primary">
+                        Add Product
+                    </div>
+                </a>
+            </div>
             <table class="view-table">
                 <thead>
                     <tr>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Order;
+use App\Models\OrderItems;
 use App\Models\Product;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
@@ -86,6 +88,30 @@ class CartController extends Controller
 
         $cart->save();
         return redirect()->back()->with('success', 'Product  Quantity edited!');
+    }
+
+    public function checkout(Request $request)
+    {
+        $order = new Order();
+        $order->is_paid = true;
+        $order->total = $request->total;
+        $order->save();
+
+        $cartItems = Cart::where('user_id', Auth::id())->get();
+
+        foreach ($cartItems as $item) {
+            $orderItem = new OrderItems();
+            $orderItem->user_id = $item->user_id;
+            $orderItem->quantity = $item->quantity;
+            $orderItem->product_id = $item->product_id;
+            $orderItem->price = $item->product->price;
+            $orderItem->order_id = $order->id;
+
+            $orderItem->save();
+        }
+
+        Cart::destroy($cartItems);
+        return redirect('/')->with('success', 'Order was placed successfully!');
     }
 
     /**

@@ -147,8 +147,10 @@ $cartItems=[];
                         </div>
                     </div>
 
-                    <form action="" class="form-blank">
-                        <button class="btn btn-primary btn-full checkout-btn">
+                    <form action="/cart/checkout" method="POST" class="form-blank">
+                        @csrf
+                        <input type="hidden" name="total" value="{{$total}}" />
+                        <button type="submit" class="btn btn-primary btn-full checkout-btn">
                             Checkout
                         </button>
                     </form>

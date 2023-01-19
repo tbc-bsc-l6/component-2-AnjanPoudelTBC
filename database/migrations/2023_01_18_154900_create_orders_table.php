@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->boolean('is_paid')->default(true);
+            $table->double('total', 8, 2);
             $table->timestamps();
         });
     }

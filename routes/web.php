@@ -4,6 +4,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Product;
@@ -40,7 +41,8 @@ Route::delete('/admin/products/{product}', [ProductController::class, 'destroy']
 
 // Route for admin side
 Route::get('/admin/dashboard', [DashboardController::class, 'index']);
-
+Route::get('/admin/users', [DashboardController::class, 'fetchUsers']);
+Route::get('/admin/orders', [OrderController::class, 'fetchAllOrders']);
 
 // CAtegories route
 
@@ -55,10 +57,7 @@ Route::delete('admin/categories/{category}', [CategoryController::class, 'destro
 
 Route::get('/product/{product}', [ProductController::class, 'show']);
 
-Route::get('/my-orders', function () {
-
-    return view('pages.myOrders');
-});
+Route::get('/my-orders',  [OrderController::class, 'fetchMyOrders']);
 
 Route::get('/my-categories', function () {
     return view('pages.filterPage');
@@ -70,6 +69,8 @@ Route::get('/cart', [CartController::class, 'getCartItems']);
 Route::post('/cart/add', [CartController::class, 'addProduct']);
 Route::delete('/cart/{cart}', [CartController::class, 'deleteCartItem']);
 Route::put('/cart/{cart}', [CartController::class, 'updateCart']);
+Route::post('/cart/checkout', [CartController::class, 'checkout']);
+
 
 Route::get('/products', [ProductController::class, 'search']);
 

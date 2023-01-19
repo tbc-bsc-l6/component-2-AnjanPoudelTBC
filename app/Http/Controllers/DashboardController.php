@@ -20,4 +20,11 @@ class DashboardController extends Controller
 
         return view('pages.admin.dashboard', ["products" => $products, "categories" => $categories, "users" => $users, "orders" => $orders]);
     }
+
+    public function fetchUsers()
+    {
+        $users = User::get();
+
+        return view('pages.admin.users', ['users' => $users]);
+    }
 }

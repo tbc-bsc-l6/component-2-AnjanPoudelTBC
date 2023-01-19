@@ -18,9 +18,4 @@ class Cart extends Model
     {
         return $this->belongsTo(User::class);
     }
-
-    public function getNumberOfItems($userId)
-    {
-        return 90;
-    }
 }

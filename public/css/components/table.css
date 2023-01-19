@@ -3,16 +3,19 @@
     margin: 25px 0;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
-    width: 100%;
+   min-width: 550px;
+    width: max-content;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
+
+
 
 .view-table thead tr {
     background-color: #009879;
     color: #ffffff;
     text-align: left;
     
+
 }
 /* .view-table tr:hover{
     font-weight: bold;
@@ -22,7 +25,7 @@
 .view-table th,
 .view-table td {
     padding: 12px 15px;
-    
+    max-width: 400px;
 }
 
 .view-table tbody tr {
@@ -50,4 +53,16 @@
 }
 .action-icon img{
     width: 100%;
+}
+
+.table-header{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.table-header-text{
+font-size: var(--font-size-md);
+font-weight: 600;
 }
