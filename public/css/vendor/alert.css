@@ -1,0 +1,15 @@
+.alert{
+    position: absolute;
+    width: 500px;
+    top: 80px;
+    z-index: 100;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+@media screen and (max-width: 576px){
+.alert{
+    width: 100%;
+}
+   
+}

@@ -5,7 +5,7 @@
         @include('components.auth-nav',['activePanel'=>'products'])
         <div class="auth-page-content">
             <form class="my-form my-create-form" method="POST" enctype="multipart/form-data"
-                action="{{ url('products/add') }}">
+                action='/admin/products/add'>
                 @csrf
 
                 <div class=" mb-6 text-xl font-semibold">
@@ -14,9 +14,9 @@
 
                 {{-- Product Image --}}
 
-                <div class="mt-6">
+                <div class="mt-6 w-100">
 
-                    <label for="product-image-path">
+                    <label for="product-image-path" class="w-100">
                         <div class="form-product-image {{count($errors->get('product_image_path'))>0?"
                             error-input":""}}">
                             <div>
@@ -33,6 +33,8 @@
                     <input type="file" hidden id="product-image-path" name="product_image_path"
                         accept="image/png, image/jpeg" value="{{old('product-image-path')}}"
                         onchange=" uploadImage(event)">
+                    <input type="hidden" name="hidden_product_image_path" value="{{ old('product_image_path') }}" />
+
 
                     <x-input-error :messages="$errors->get('product_image_path')" class="mt-2" />
                 </div>

@@ -126,3 +126,4 @@ class CartController extends Controller
         return redirect()->back()->with('success', 'Product deleted From Cart!');
     }
 }
+    

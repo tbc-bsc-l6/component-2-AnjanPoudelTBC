@@ -108,3 +108,29 @@ gap: 4rem;
 .auth-page-content{
     overflow: scroll;
 }
+
+.auth-nav-mobile{
+    display: none;
+}
+@media screen and (max-width: 576px){
+    .auth-dashboard{
+        gap: 1rem;
+        flex-direction: column;
+    }
+    .auth-navigation{
+        width: 100%;
+    }
+    .user-profile-image{
+        display: none;
+    }
+    .auth-nav-mobile{
+        display: block;
+    }
+
+    .auth-nav-desktop{
+        display: none;
+    }
+    .user-update-item{
+        flex-direction: column;
+    }
+}

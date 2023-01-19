@@ -45,10 +45,16 @@ $searchQuery = $_GET['search'];
                     </div>
 
                 </div>
-                <div class="category-products-data">
-                    @foreach($products as $key => $product)
-                    @include('components.product',['product'=>$product])
-                    @endforeach
+                <div>
+                    <div class="category-products-data">
+                        @foreach($products as $key => $product)
+                        @include('components.product',['product'=>$product])
+                        @endforeach
+
+                    </div>
+                    <div style="margin-top: 2rem">
+                        {{$products->links()}}
+                    </div>
                 </div>
 
             </div>

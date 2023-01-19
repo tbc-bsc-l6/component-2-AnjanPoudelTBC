@@ -79,3 +79,15 @@ border-bottom: 1px solid var(--secondary-color);
     border-style: dashed; 
     padding-top: 1rem;
 }
+
+@media screen and (max-width: 576px){
+   .my-order{
+    font-size: var(--font-size-sm);
+   }
+   .my-order-image{
+    width: 50px;
+   }
+   .my-order-desc{
+    padding: 0;
+   }
+}

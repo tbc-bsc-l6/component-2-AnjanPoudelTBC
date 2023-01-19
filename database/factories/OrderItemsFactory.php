@@ -16,8 +16,13 @@ class OrderItemsFactory extends Factory
      */
     public function definition()
     {
+        $num = 1;
         return [
-            //
+            'order_id' =>  fake()->numberBetween(1, 5),
+            'user_id' =>  3,
+            'quantity' => fake()->numberBetween(1, 5),
+            'product_id' => fake()->numberBetween(1, 45),
+            'price' => fake()->randomFloat(1, 2, 20),
         ];
     }
 }

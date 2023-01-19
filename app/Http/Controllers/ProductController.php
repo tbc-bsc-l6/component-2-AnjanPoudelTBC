@@ -54,7 +54,7 @@ class ProductController extends Controller
         ]);
 
         if ($validatedData->fails()) {
-            return redirect('products/add')
+            return redirect()->back()
                 ->withErrors($validatedData)
                 ->withInput();
         }
@@ -63,9 +63,9 @@ class ProductController extends Controller
 
         if ($request->file('product_image_path')) {
             $file = $request->file('product_image_path');
-            $filename = date('YmdHi') . $file->getClientOriginalName();
-            $file->move(public_path('/UploadedImages'), $filename);
-            $product->image_path = $filename;
+            $filename = $file->getClientOriginalName();
+            $file->move(public_path('/assets/products'), $filename);
+            $product->image_path = '/assets/products/' . $filename;
         }
         $product->product_name = $request->product_name;
         $product->description = $request->product_description;
@@ -139,14 +139,14 @@ class ProductController extends Controller
 
         if ($request->product_image_path != '') {
             $file = $request->file('product_image_path');
-            $filename = date('YmdHi') . $file->getClientOriginalName();
-            $file->move(public_path('/UploadedImages'), $filename);
+            $filename =  $file->getClientOriginalName();
+            $file->move(public_path('/assets/products'), $filename);
         }
 
 
         //  $product->update($request->all());
         //Update with mass assignment
-        $product->image_path = $filename;
+        $product->image_path = '/assets/products' . $filename;
         $product->product_name = $request->product_name;
         $product->description = $request->product_description;
         $product->category_id = $request->category;
@@ -179,6 +179,6 @@ class ProductController extends Controller
     {
         // dd($request->category);
 
-        return view('pages.filterPage', ['products' =>  Product::filter(request(['search', 'category', 'price_order', 'name_order']))->get(), 'categories' => Category::all()]);
+        return view('pages.filterPage', ['products' =>  Product::filter(request(['search', 'category', 'price_order', 'name_order']))->paginate(8)->withQueryString(), 'categories' => Category::all()]);
     }
 }

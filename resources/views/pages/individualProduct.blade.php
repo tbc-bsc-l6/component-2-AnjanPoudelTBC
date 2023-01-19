@@ -31,9 +31,23 @@
             </div>
 
             <div class="product-add">
-                <button class="btn btn-primary btn-lg">
-                    Add to Cart
-                </button>
+                @guest
+                <form action="/login" class="form-blank">
+                    <button type="submit" class="btn btn-primary btn-lg product-card-btn">
+                        Add to cart
+                    </button>
+                </form>
+                @endguest
+                @auth('')
+                <form method="POST" action="/cart/add" class="form-blank">
+                    @csrf
+                    <input hidden name="quantity" value=1 />
+                    <input hidden name="product" value="{{$product->id}}" />
+                    <button type="submit" class="btn btn-primary btn-lg product-card-btn">
+                        Add to cart
+                    </button>
+                </form>
+                @endauth
             </div>
 
         </div>

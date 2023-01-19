@@ -22,57 +22,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-
-// Routes for product
-
-//  Route::resource('products', ProductController::class);
-
-Route::get('/admin/products', [ProductController::class, 'index'])->name('allProducts');
-Route::get('/admin/products/add', [ProductController::class, 'create']);
-Route::post('/admin/products/add', [ProductController::class, 'store']);
-Route::get('/admin/products/{product}/edit', [ProductController::class, 'edit']);
-Route::patch('/admin/products/{product}', [ProductController::class, 'update']);
-Route::delete('/admin/products/{product}', [ProductController::class, 'destroy']);
+Route::middleware(['redirectAdmin'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
-//->middleware('adminOnly');
+    //->middleware('adminOnly');
 
 
-// Route for admin side
-Route::get('/admin/dashboard', [DashboardController::class, 'index']);
-Route::get('/admin/users', [DashboardController::class, 'fetchUsers']);
-Route::get('/admin/orders', [OrderController::class, 'fetchAllOrders']);
 
-// CAtegories route
+    //Individual Product page
 
-Route::get('admin/categories', [CategoryController::class, 'index'])->name('allCategories');
-Route::post('admin/categories/add', [CategoryController::class, 'store'])->name('addCategory');
-Route::get('admin/categories/add', [CategoryController::class, 'create'])->name('addCategoryForm');
-Route::patch('admin/categories/{category}', [CategoryController::class, 'update']);
-Route::get('admin/categories/{category}/edit', [CategoryController::class, 'edit']);
-Route::delete('admin/categories/{category}', [CategoryController::class, 'destroy']);
+    Route::get('/product/{product}', [ProductController::class, 'show']);
 
-//Individual Product page
+    Route::get('/my-orders',  [OrderController::class, 'fetchMyOrders']);
 
-Route::get('/product/{product}', [ProductController::class, 'show']);
+    Route::get('/my-categories', function () {
+        return view('pages.filterPage');
+    });
 
-Route::get('/my-orders',  [OrderController::class, 'fetchMyOrders']);
 
-Route::get('/my-categories', function () {
-    return view('pages.filterPage');
+    // Routes for cart 
+    Route::get('/cart', [CartController::class, 'getCartItems']);
+    Route::post('/cart/add', [CartController::class, 'addProduct']);
+    Route::delete('/cart/{cart}', [CartController::class, 'deleteCartItem']);
+    Route::put('/cart/{cart}', [CartController::class, 'updateCart']);
+    Route::post('/cart/checkout', [CartController::class, 'checkout']);
+
+
+    Route::get('/products', [ProductController::class, 'search']);
 });
-
-
-// Routes for cart 
-Route::get('/cart', [CartController::class, 'getCartItems']);
-Route::post('/cart/add', [CartController::class, 'addProduct']);
-Route::delete('/cart/{cart}', [CartController::class, 'deleteCartItem']);
-Route::put('/cart/{cart}', [CartController::class, 'updateCart']);
-Route::post('/cart/checkout', [CartController::class, 'checkout']);
-
-
-Route::get('/products', [ProductController::class, 'search']);
 
 // Route::get('/profile', function () {
 //     return view('dashboard');

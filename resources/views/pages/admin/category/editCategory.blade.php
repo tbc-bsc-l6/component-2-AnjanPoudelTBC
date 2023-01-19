@@ -6,7 +6,7 @@
         @include('components.auth-nav',['activePanel'=>'categories'])
         <div class="auth-page-content">
             <form class="my-form my-create-form" method="POST" enctype="multipart/form-data"
-                action='/categories/{{$category->id}}'>
+                action='/admin/categories/{{$category->id}}'>
                 @csrf
                 @method('PATCH')
 

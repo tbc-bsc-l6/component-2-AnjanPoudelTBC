@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -26,9 +27,10 @@ class HomeController extends Controller
     public function index()
     {
 
-        $products = Product::with('category')->paginate(5);
-        $ourPicks = Product::with('category')->paginate(5);
-        $vegetables = Product::with('category')->paginate(5);
-        return view('pages.home', ['products' => $products, "ourPicks" => $ourPicks, "vegetables" => $vegetables]);
+
+        $chosenCategory = Category::first();
+        $chosenCategoryProducts = Product::with('category')->where('category_id', $chosenCategory->id)->paginate(5);
+        $ourProducts = Product::with('category')->paginate(10);
+        return view('pages.home', ['chosenCategory' => $chosenCategory, "ourProducts" => $ourProducts, "chosenCategoryProducts" => $chosenCategoryProducts]);
     }
 }

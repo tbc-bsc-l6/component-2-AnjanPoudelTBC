@@ -60,6 +60,9 @@ class OrderController extends Controller
 
             $myOrder = Order::where('id', $orderId)->first();
             // dd($myOrder);
+
+
+
             $prices[$orderId] = $myOrder->total;
         }
         return $prices;

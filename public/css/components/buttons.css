@@ -21,6 +21,12 @@
     transition: 0.2s all ease-in-out;
     
 }
+.btn-danger{
+    color: white;
+    background-color: var(--danger-color) !important;
+    transition: 0.2s all ease-in-out;
+    
+}
 
 
 .btn-secondary{
@@ -31,6 +37,10 @@
 .btn-primary:hover,.btn-primary:focus{
     background-color: #047b6d !important;
 }
+.btn-danger:hover,.btn-danger:focus{
+    background-color: rgb(150, 44, 44) !important;
+}
+
 
 .btn-secondary:hover,.btn-secondary:focus{
     background-color: rgb(166, 166, 166) !important;

@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="auth-dashboard">
-        @include('components.auth-nav',['activePanel'=>'ctegories'])
+        @include('components.auth-nav',['activePanel'=>'categories'])
         <form class="my-form my-create-form" method="POST" enctype="multipart/form-data"
             action="{{ url('categories/add') }}">
             @csrf
@@ -34,6 +34,5 @@
 
         </form>
     </div>
-</div>
 
-@endsection
+    @endsection

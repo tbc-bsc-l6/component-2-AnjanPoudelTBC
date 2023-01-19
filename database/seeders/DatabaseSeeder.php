@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Category;
+use App\Models\Order;
+use App\Models\OrderItems;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -25,11 +27,15 @@ class DatabaseSeeder extends Seeder
         Category::truncate();
 
 
-        User::factory(10)->create();
+        User::factory(12)->create();
 
         Category::factory(5)->create();
 
-        Product::factory(30)->create();
+        Product::factory(60)->create();
+
+        Order::factory(5)->create();
+
+        OrderItems::factory(20)->create();
 
         User::factory()->create([
             'name' => 'Admin',

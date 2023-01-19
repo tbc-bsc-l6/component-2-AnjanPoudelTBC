@@ -17,7 +17,8 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'is_paid' =>  true,
+            'total' => fake()->randomFloat(1, 12, 60),
         ];
     }
 }

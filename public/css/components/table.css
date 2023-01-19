@@ -3,9 +3,14 @@
     margin: 25px 0;
     font-size: 0.9em;
     font-family: sans-serif;
-   min-width: 550px;
+   min-width: 100%;
     width: max-content;
+    /* overflow: scroll; */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.view-table-wrap{
+    overflow: scroll;
 }
 
 

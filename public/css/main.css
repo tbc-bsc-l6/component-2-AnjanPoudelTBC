@@ -3,6 +3,7 @@
 
 /* Import vendors */
 @import url('./vendor/swiperCarousel.css');
+@import url('./vendor/alert.css');
 
 /* Import components */
 @import url('./components/navbar.css');

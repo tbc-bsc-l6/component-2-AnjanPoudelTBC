@@ -6,7 +6,7 @@
         @include('components.auth-nav',['activePanel'=>'products'])
         <div class="auth-page-content">
             <form class="my-form my-create-form" method="POST" enctype="multipart/form-data"
-                action='/products/{{$product->id}}'>
+                action='/admin/products/{{$product->id}}'>
                 @csrf
                 @method('PATCH')
 
@@ -22,7 +22,7 @@
                         <div class="form-product-image {{count($errors->get('product_image_path'))>0?"
                             error-input":""}}">
                             <div>
-                                <img class="form-product-image-icon" src="/UploadedImages/{{$product->image_path}}"
+                                <img class="form-product-image-icon" src="{{$product->image_path}}"
                                     alt="product image" />
                             </div>
                             <div class=" form-product-image-text">
