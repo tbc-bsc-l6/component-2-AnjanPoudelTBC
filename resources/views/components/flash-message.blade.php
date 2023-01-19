@@ -23,7 +23,7 @@
 </div>
 @endif
 
-@if ($message = Session::get('info'))
+@if ($message = Session::get('status'))
 <div class="alert alert-info alert-dismissible fade show" x-show="showMessage" x-data="{ showMessage: true }"
     x-init="setTimeout(() => showMessage = false, 2400)" role="alert">
     <strong>{{ $message }}</strong>

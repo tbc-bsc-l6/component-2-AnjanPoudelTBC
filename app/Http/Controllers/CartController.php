@@ -6,6 +6,7 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderItems;
 use App\Models\Product;
+use Exception;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -109,9 +110,29 @@ class CartController extends Controller
 
             $orderItem->save();
         }
-
         Cart::destroy($cartItems);
-        return redirect('/')->with('success', 'Order was placed successfully!');
+
+        \Stripe\Stripe::setApiKey(config('stripe.sk'));
+
+        $session = \Stripe\Checkout\Session::create([
+            'line_items'  => [
+                [
+                    'price_data' => [
+                        'currency'     => 'usd',
+                        'product_data' => [
+                            'name' => 'Groceries',
+                        ],
+                        'unit_amount'  => $request->total * 100,
+                    ],
+                    'quantity'   => 1,
+                ],
+            ],
+            'mode'        => 'payment',
+            'success_url' => route('myOrder'),
+            'cancel_url'  => route('home'),
+        ]);
+
+        return redirect()->away($session->url);
     }
 
     /**
@@ -126,4 +147,3 @@ class CartController extends Controller
         return redirect()->back()->with('success', 'Product deleted From Cart!');
     }
 }
-    

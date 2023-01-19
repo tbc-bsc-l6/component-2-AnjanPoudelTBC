@@ -7,7 +7,8 @@
     <div
         class="w-full sm:max-w-md  px-6 py-4 bg-white border-solid border-2 border-sky-500 overflow-hidden sm:rounded-lg">
         <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+        {{--
+        <x-auth-session-status class="mb-4" :status="session('status')" /> --}}
 
         <div class="mt-2 mb-4 text-xl font-semibold">
             User Login

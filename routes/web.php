@@ -34,7 +34,7 @@ Route::middleware(['redirectAdmin'])->group(function () {
 
     Route::get('/product/{product}', [ProductController::class, 'show']);
 
-    Route::get('/my-orders',  [OrderController::class, 'fetchMyOrders']);
+    Route::get('/my-orders',  [OrderController::class, 'fetchMyOrders'])->name('myOrder');
 
     Route::get('/my-categories', function () {
         return view('pages.filterPage');
