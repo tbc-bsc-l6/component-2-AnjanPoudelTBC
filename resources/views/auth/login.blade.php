@@ -1,5 +1,7 @@
 @extends('layouts.masterlayout')
-
+@section('header')
+Groceries | Login
+@endsection
 @section ('content')
 <div class="flex flex-col sm:justify-center items-center ">
 

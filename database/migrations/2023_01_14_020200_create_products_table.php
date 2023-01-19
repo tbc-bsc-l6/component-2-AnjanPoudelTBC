@@ -18,12 +18,16 @@ return new class extends Migration
             $table->string('image_path');
             $table->string('product_name');
             $table->string('description', 250);
-            $table->foreignId('category_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('unit', 10);
             $table->integer('quantity');
             $table->double('price', 8, 2);
             $table->integer('quantity_in_stock');
             $table->timestamps();
+        });
+
+        Schema::table('products', function (Blueprint $table) {
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

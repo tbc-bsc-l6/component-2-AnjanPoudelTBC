@@ -1,5 +1,9 @@
 @extends('layouts.masterlayout')
 
+
+@section('header')
+{{$product->product_name}}
+@endsection
 @section( 'content')
 
 <div class="container ">

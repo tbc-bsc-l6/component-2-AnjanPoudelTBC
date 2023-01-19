@@ -1,4 +1,7 @@
 @extends('layouts.masterlayout')
+@section('header')
+Groceries | Categories
+@endsection
 
 @section('content')
 

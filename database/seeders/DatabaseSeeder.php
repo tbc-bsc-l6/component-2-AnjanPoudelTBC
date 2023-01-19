@@ -4,12 +4,14 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\OrderItems;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
@@ -22,9 +24,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        User::truncate();
-        Product::truncate();
-        Category::truncate();
+
+        DB::table('products')->delete();
+        DB::table('users')->delete();
+        DB::table('orders')->delete();
+        DB::table('order_items')->delete();
+        DB::table('categories')->delete();
+        DB::table('products')->delete();
+        // Product::truncate();
+        // Category::truncate();
+        // User::truncate();
+        // Cart::truncate();
 
 
         User::factory(12)->create();

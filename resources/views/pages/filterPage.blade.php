@@ -1,5 +1,9 @@
 @extends('layouts.masterlayout')
 
+@section('header')
+Groceries | Filter
+@endsection
+
 @section( 'content')
 
 @php

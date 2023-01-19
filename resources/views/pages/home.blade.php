@@ -1,5 +1,10 @@
 @extends('layouts.masterlayout')
 
+
+@section('header')
+Groceries | Home
+@endsection
+
 @section( 'content')
 
 

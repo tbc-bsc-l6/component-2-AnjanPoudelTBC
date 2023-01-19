@@ -1,4 +1,8 @@
 @extends('layouts.masterlayout')
+
+@section('header')
+Groceries | Cart
+@endsection
 @section( 'content')
 
 @php

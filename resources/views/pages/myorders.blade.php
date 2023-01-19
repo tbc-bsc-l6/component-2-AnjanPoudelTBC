@@ -1,5 +1,8 @@
 @extends('layouts.masterlayout')
 
+@section('header')
+Groceries | Orders
+@endsection
 @section( 'content')
 <div class="container ">
     <div class="auth-dashboard">
